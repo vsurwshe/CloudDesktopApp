@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E39612D8-1AA1-48BD-A49D-AC2C81D4842E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloudDesktopApp</RootNamespace>
+    <AssemblyName>CloudDesktopApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\ProjectRequiredFiles\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\ProjectRequiredFiles\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\ProjectRequiredFiles\NewSoftJson\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiOperations\CustomerApiServices.cs" />
+    <Compile Include="ApiOperations\FoodApiServices.cs" />
+    <Compile Include="ApiOperations\HotelTableServicesApi.cs" />
+    <Compile Include="ApiOperations\UserService.cs" />
+    <Compile Include="ApiOperations\CommonApiOperation.cs" />
+    <Compile Include="ApiOperations\CommonModelClass.cs" />
+    <Compile Include="ApiOperations\LoginRegsiter.cs" />
+    <Compile Include="ApiOperations\ProfileApiService.cs" />
+    <Compile Include="Component\Customer\ViewCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Customer\ViewCustomer.Designer.cs">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Food\ViewFood.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Food\ViewFood.Designer.cs">
+      <DependentUpon>ViewFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\HotelTabel\HotelTabelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\HotelTabel\HotelTabelForm.Designer.cs">
+      <DependentUpon>HotelTabelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\HotelTabel\TabelManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\HotelTabel\TabelManagement.Designer.cs">
+      <DependentUpon>TabelManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Customer\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Customer\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Customer\CustomerManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Customer\CustomerManagment.Designer.cs">
+      <DependentUpon>CustomerManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Dashborad\VerifyUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Dashborad\VerifyUser.Designer.cs">
+      <DependentUpon>VerifyUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Food\FoodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Food\FoodForm.Designer.cs">
+      <DependentUpon>FoodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Food\FoodManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Food\FoodManagement.Designer.cs">
+      <DependentUpon>FoodManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Dashborad\CommonDashborad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Dashborad\CommonDashborad.Designer.cs">
+      <DependentUpon>CommonDashborad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Help\HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Help\HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\HotelTabel\ViewHotelTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\HotelTabel\ViewHotelTable.Designer.cs">
+      <DependentUpon>ViewHotelTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\MainTable\MainTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\MainTable\MainTable.Designer.cs">
+      <DependentUpon>MainTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Profile\CreateProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Profile\CreateProfile.Designer.cs">
+      <DependentUpon>CreateProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Profile\DeleteProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Profile\DeleteProfile.Designer.cs">
+      <DependentUpon>DeleteProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Profile\ProfileItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\Profile\ProfileItems.Designer.cs">
+      <DependentUpon>ProfileItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Profile\ProfileManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Profile\ProfileManagement.Designer.cs">
+      <DependentUpon>ProfileManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Profile\UpdateProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Profile\UpdateProfile.Designer.cs">
+      <DependentUpon>UpdateProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Setting\UserSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\Setting\UserSetting.Designer.cs">
+      <DependentUpon>UserSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\UserDashborad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\UserDashborad.Designer.cs">
+      <DependentUpon>UserDashborad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalClass.cs" />
+    <Compile Include="Helper\CommonMessage.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\CommonClasses.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regsiter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regsiter.Designer.cs">
+      <DependentUpon>Regsiter.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Component\Customer\ViewCustomer.resx">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Food\ViewFood.resx">
+      <DependentUpon>ViewFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\HotelTabel\HotelTabelForm.resx">
+      <DependentUpon>HotelTabelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\HotelTabel\TabelManagement.resx">
+      <DependentUpon>TabelManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Customer\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Customer\CustomerManagment.resx">
+      <DependentUpon>CustomerManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Dashborad\CommonDashborad.resx">
+      <DependentUpon>CommonDashborad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Dashborad\VerifyUser.resx">
+      <DependentUpon>VerifyUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Food\FoodForm.resx">
+      <DependentUpon>FoodForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Food\FoodManagement.resx">
+      <DependentUpon>FoodManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Help\HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\HotelTabel\ViewHotelTable.resx">
+      <DependentUpon>ViewHotelTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\MainTable\MainTable.resx">
+      <DependentUpon>MainTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Profile\CreateProfile.resx">
+      <DependentUpon>CreateProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Profile\DeleteProfile.resx">
+      <DependentUpon>DeleteProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Profile\ProfileItems.resx">
+      <DependentUpon>ProfileItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Profile\ProfileManagement.resx">
+      <DependentUpon>ProfileManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Profile\UpdateProfile.resx">
+      <DependentUpon>UpdateProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\Setting\UserSetting.resx">
+      <DependentUpon>UserSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\UserDashborad.resx">
+      <DependentUpon>UserDashborad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Regsiter.resx">
+      <DependentUpon>Regsiter.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-male-user-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashborad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foods.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurant-table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profileMage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profileIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
