@@ -27,14 +27,14 @@ namespace CloudDesktopApp.Component.MainTable
         private void MainTableManagement_Load(object sender, EventArgs e)
         {
             this.loadProfileRealtedData();
-            hotelTablesPanle.Controls.Add(new TableStatusControl());
+            hotelTablesPanle.Controls.Add(new TableStatusControl(this.tempHotelTableList));
             invoicePanel.Controls.Add(new HotelTableInvoiceControl());
         }
 
         private void loadProfileRealtedData()
         {
-                this.tempHotelTableList = new TabelManagement().loadHotelTable();
-                this.tempFoodsList = new FoodManagement().loadFoods();
+           this.tempHotelTableList = new TabelManagement().loadHotelTable();
+           this.tempFoodsList = new FoodManagement().loadFoods();
         }
     }
 }

@@ -60,6 +60,7 @@
             this.Controls.Add(this.freeTables);
             this.Name = "TableStatusControl";
             this.Size = new System.Drawing.Size(586, 563);
+            this.Load += new System.EventHandler(this.TableStatusControl_Load);
             this.ResumeLayout(false);
 
         }

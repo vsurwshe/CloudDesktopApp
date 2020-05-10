@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 //------
 using CloudDesktopApp.ApiOperations;
 namespace CloudDesktopApp
@@ -16,6 +17,7 @@ namespace CloudDesktopApp
         public static List<HotelTableModel> hotelTableModelList;
         public static List<ProfileModel> profileModelList;
 
+        public static DataTable hotelTables;
 
         public static void clearProfileData()
         {

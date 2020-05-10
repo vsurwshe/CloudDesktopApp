@@ -211,6 +211,7 @@
     </Compile>
     <Compile Include="GlobalClass.cs" />
     <Compile Include="Helper\CommonMessage.cs" />
+    <Compile Include="Helper\ListToDataTableConvetor.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

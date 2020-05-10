@@ -80,12 +80,26 @@ namespace CloudDesktopApp.ApiOperations
         public string hotelTableLocations { get; set; }
         public int hotelTableSize { get; set; }
         public double version { get; set; }
+        public Boolean booked { get; set; }
     }
 
     // This is invoice model class
     public class LocalInvoiceModel
     {
         public int invoiceId { get; set; }
+        public List<InvoiceItemModel> invoiceItems { get; set; }
+        public HotelTableModel hotelTable { get; set; }
+        public CustomerModel customer { get; set; }
 
+    }
+
+    public class InvoiceItemModel 
+    {
+        public int invoiceItemId { get; set; }
+        public String invoiceItemName { get; set; }
+        public Double invoiceItemPrice { get; set; }
+        public int invoiceItemQty { get; set; }
+        public Double invoiceTotalPrice { get; set; }
+        public LocalInvoiceModel invoice {get; set;}
     }
 }
