@@ -81,6 +81,18 @@ namespace CloudDesktopApp.ApiOperations
         public int hotelTableSize { get; set; }
         public double version { get; set; }
         public Boolean booked { get; set; }
+
+        public HotelTableModel() { }
+
+        public HotelTableModel(int hotelTableId, string hotelTableName, string hotelTableLocations, int hotelTableSize, double version, Boolean booked)
+        {
+            this.hotelTableId = hotelTableId;
+            this.hotelTableName = hotelTableName;
+            this.hotelTableLocations = hotelTableLocations;
+            this.hotelTableSize = hotelTableSize;
+            this.version = version;
+            this.booked = booked;
+        }
     }
 
     // This is invoice model class
