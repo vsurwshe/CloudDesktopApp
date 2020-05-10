@@ -37,6 +37,7 @@ namespace CloudDesktopApp.Component.HotelTabel
             hotelTableDetails.Columns.Add(deleteButton);
             hotelTableDetails.DataSource = this.tempHotelTable;
             hotelTableDetails.Columns["version"].Visible = false;
+            hotelTableCountLabel.Text = hotelTableDetails.RowCount.ToString();
         }
 
         private void hotelTableDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)

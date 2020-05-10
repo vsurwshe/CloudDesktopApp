@@ -12,7 +12,6 @@ using MaterialSkin.Controls;
 using CloudDesktopApp.Helper;
 using CloudDesktopApp.Component.Profile;
 using CloudDesktopApp.Component.Food;
-using CloudDesktopApp.Component.Food;
 using CloudDesktopApp.Component.HotelTabel;
 using CloudDesktopApp.Component.Setting;
 using CloudDesktopApp.Component.Help;
@@ -49,7 +48,7 @@ namespace CloudDesktopApp.Component
                 String profileId = Properties.Settings.Default.profileId;
                 if (profileId.Equals(""))
                 {
-                    List<ProfileModel> profiles = new ProfileApiService().loadProfiles();
+                    List<ProfileModel> profiles = new ProfileApiService().getProfiles(false);
                     if (profiles != null)
                     {
                         Properties.Settings.Default.profileId = profiles.First().profileId.ToString();
@@ -97,7 +96,7 @@ namespace CloudDesktopApp.Component
         {
             try
             {
-                Type typeOfFoods = typeof(Tabel);
+                Type typeOfFoods = typeof(TabelManagement);
                 this.createShowForm(typeOfFoods);
             }
             catch (Exception msg)

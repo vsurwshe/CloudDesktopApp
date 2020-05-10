@@ -81,4 +81,11 @@ namespace CloudDesktopApp.ApiOperations
         public int hotelTableSize { get; set; }
         public double version { get; set; }
     }
+
+    // This is invoice model class
+    public class LocalInvoiceModel
+    {
+        public int invoiceId { get; set; }
+
+    }
 }

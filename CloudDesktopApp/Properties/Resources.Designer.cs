@@ -63,6 +63,16 @@ namespace CloudDesktopApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bookedTable {
+            get {
+                object obj = ResourceManager.GetObject("bookedTable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dashborad {
             get {
                 object obj = ResourceManager.GetObject("dashborad", resourceCulture);
@@ -96,6 +106,16 @@ namespace CloudDesktopApp.Properties {
         internal static System.Drawing.Bitmap foods {
             get {
                 object obj = ResourceManager.GetObject("foods", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap freeTable {
+            get {
+                object obj = ResourceManager.GetObject("freeTable", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +176,16 @@ namespace CloudDesktopApp.Properties {
         internal static System.Drawing.Bitmap restaurant_table {
             get {
                 object obj = ResourceManager.GetObject("restaurant-table", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap setProfile {
+            get {
+                object obj = ResourceManager.GetObject("setProfile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -27,17 +27,25 @@ namespace CloudDesktopApp.ApiOperations
         }
 
         // This method used for the get the food list 
-        public List<FoodModel> getFoods()
+        public List<FoodModel> getFoods(Boolean recall)
         {
             List<FoodModel> result = null;
-            Object resultApi = new CommonApiOperation().apiCall(this.commonUrl + "gets", "GET", null, true);
-            if (CommonClasses.checkResposeResult(resultApi))
+            if (GlobalClass.foodModelList == null || recall)
             {
-                result = JsonConvert.DeserializeObject<List<FoodModel>>(resultApi.ToString());
+                Object resultApi = new CommonApiOperation().apiCall(this.commonUrl + "gets", "GET", null, true);
+                if (CommonClasses.checkResposeResult(resultApi))
+                {
+                    result = JsonConvert.DeserializeObject<List<FoodModel>>(resultApi.ToString());
+                    GlobalClass.foodModelList = result;
+                }
+                else
+                {
+                    throw new Exception(CommonMessage.FOOD_NO_RECORD_MESSAGE);
+                }
             }
             else
             {
-                throw new Exception(CommonMessage.FOOD_NO_RECORD_MESSAGE);
+                result = GlobalClass.foodModelList;
             }
             return result;
         }
@@ -50,6 +58,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = JsonConvert.DeserializeObject<FoodModel>(resultApi.ToString());
+                this.getFoods(true);
             }
             else
             {
@@ -66,6 +75,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = JsonConvert.DeserializeObject<FoodModel>(resultApi.ToString());
+                this.getFoods(true);
             }
             else
             {
@@ -82,6 +92,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = resultApi.ToString();
+                this.getFoods(true);
             }
             else
             {

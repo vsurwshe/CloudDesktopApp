@@ -31,18 +31,27 @@ namespace CloudDesktopApp.ApiOperations
             return result;
         }
 
-        public List<ProfileModel> loadProfiles()
+        public List<ProfileModel> getProfiles(Boolean recall)
         {
             List<ProfileModel> result = null;
-            Object resultApi = new CommonApiOperation().apiCall(this.commonUrl + "getAll", "GET", null, true);
-            if (CommonClasses.checkResposeResult(resultApi))
+            if (GlobalClass.profileModelList == null || recall)
             {
-                result = JsonConvert.DeserializeObject<List<ProfileModel>>(resultApi.ToString());
+                Object resultApi = new CommonApiOperation().apiCall(this.commonUrl + "getAll", "GET", null, true);
+                if (CommonClasses.checkResposeResult(resultApi))
+                {
+                    result = JsonConvert.DeserializeObject<List<ProfileModel>>(resultApi.ToString());
+                    GlobalClass.profileModelList = result;
+                }
+                else
+                {
+                    throw new Exception(CommonMessage.PROFILE_NOT_FOUND);
+                }
             }
             else
             {
-                throw new Exception(CommonMessage.PROFILE_NOT_FOUND);
+                result = GlobalClass.profileModelList;
             }
+            
             return result;
         }
 
@@ -54,6 +63,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = JsonConvert.DeserializeObject<ProfileModel>(resultApi.ToString());
+                this.getProfiles(true);
             }
             else
             {
@@ -70,6 +80,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = JsonConvert.DeserializeObject<ProfileModel>(resultApi.ToString());
+                this.getProfiles(true);
             }
             else
             {
@@ -86,6 +97,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = resultApi.ToString();
+                this.getProfiles(true);
             }
             else
             {

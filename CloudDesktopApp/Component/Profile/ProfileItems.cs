@@ -47,6 +47,7 @@ namespace CloudDesktopApp.Component.Profile
         private void setProfile_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.profileId = tempProfile.profileId.ToString();
+            GlobalClass.clearProfileData();
             MessageBox.Show(tempProfile.profileName+CommonMessage.PROFILE_SELECTED_MESSAGE);
         }
     }

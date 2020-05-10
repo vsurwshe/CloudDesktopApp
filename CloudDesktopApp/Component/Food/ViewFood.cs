@@ -36,6 +36,7 @@ namespace CloudDesktopApp.Component.Food
             foodDetails.Columns.Add(deleteButton);
             foodDetails.DataSource = this.tempFoodTabel;
             foodDetails.Columns["version"].Visible = false;
+            foodCountLabel.Text=foodDetails.RowCount.ToString();
         }
 
         private void foodDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)

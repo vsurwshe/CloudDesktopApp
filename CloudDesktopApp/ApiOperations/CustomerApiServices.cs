@@ -26,17 +26,25 @@ namespace CloudDesktopApp.ApiOperations
         }
 
         // This method used for the saving customer 
-        public List<CustomerModel> getCustomers()
+        public List<CustomerModel> getCustomers(Boolean recall)
         {
             List<CustomerModel> result = null;
-            Object resultApi = new CommonApiOperation().apiCall(this.commonUrl + "gets", "GET", null, true);
-            if (CommonClasses.checkResposeResult(resultApi))
+            if (GlobalClass.customerModelList == null || recall)
             {
-                result = JsonConvert.DeserializeObject<List<CustomerModel>>(resultApi.ToString());
+                Object resultApi = new CommonApiOperation().apiCall(this.commonUrl + "gets", "GET", null, true);
+                if (CommonClasses.checkResposeResult(resultApi))
+                {
+                    result = JsonConvert.DeserializeObject<List<CustomerModel>>(resultApi.ToString());
+                    GlobalClass.customerModelList = result;
+                }
+                else
+                {
+                    throw new Exception(CommonMessage.CUSTOMER_NO_RECORD_MESSAGE);
+                }
             }
             else
             {
-                throw new Exception(CommonMessage.CUSTOMER_NO_RECORD_MESSAGE);
+                result = GlobalClass.customerModelList;
             }
             return result;
         }
@@ -49,6 +57,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = JsonConvert.DeserializeObject<CustomerModel>(resultApi.ToString());
+                this.getCustomers(true);
             }
             else
             {
@@ -65,6 +74,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = JsonConvert.DeserializeObject<CustomerModel>(resultApi.ToString());
+                this.getCustomers(true);
             }
             else
             {
@@ -81,6 +91,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = resultApi.ToString();
+                this.getCustomers(true);
             }
             else
             {

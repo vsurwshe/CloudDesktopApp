@@ -15,7 +15,7 @@ namespace CloudDesktopApp.Component.Food
 {
     public partial class CustomerManagment : Form
     {
-        List<CustomerModel> customerResult;
+        List<CustomerModel> customerList;
         public CustomerManagment()
         {
             InitializeComponent();
@@ -23,21 +23,27 @@ namespace CloudDesktopApp.Component.Food
 
         private void CustomerManagment_Load(object sender, EventArgs e)
         {
-            this.loadCustomerList();
+            this.customerList= this.loadCustomerList();
+            if(customerList !=null){
+                ViewCustomer customerTable = new ViewCustomer(customerList);
+                this.customerTablePanel.Controls.Add(customerTable);
+            }else{
+                this.noCustomerMessageLable.Visible = true;
+            }
         }
 
-        public void loadCustomerList()
+        public List<CustomerModel> loadCustomerList()
         {
+            List<CustomerModel> customerModel = null;
             try
             {
-                customerResult = new CustomerApiServices().getCustomers();
-                ViewCustomer customerTable = new ViewCustomer(customerResult);
-                this.customerTablePanel.Controls.Add(customerTable);
+               customerModel = new CustomerApiServices().getCustomers(false);
             }
             catch (Exception msg) 
             {
                 UserMessage.ShowExceptions(msg.Message);
             }
+            return customerModel;
         }
         private void customerCreate_Click(object sender, EventArgs e)
         {

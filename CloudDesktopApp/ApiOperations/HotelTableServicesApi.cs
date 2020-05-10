@@ -26,17 +26,25 @@ namespace CloudDesktopApp.ApiOperations
         }
 
         // This method used for the get the hotel tabel list 
-        public List<HotelTableModel> getHotelTables()
+        public List<HotelTableModel> getHotelTables(Boolean recall)
         {
             List<HotelTableModel> result = null;
-            Object resultApi = new CommonApiOperation().apiCall(this.commonUrl + "gets", "GET", null, true);
-            if (CommonClasses.checkResposeResult(resultApi))
+            if (GlobalClass.hotelTableModelList == null || recall)
             {
-                result = JsonConvert.DeserializeObject<List<HotelTableModel>>(resultApi.ToString());
+                Object resultApi = new CommonApiOperation().apiCall(this.commonUrl + "gets", "GET", null, true);
+                if (CommonClasses.checkResposeResult(resultApi))
+                {
+                    result = JsonConvert.DeserializeObject<List<HotelTableModel>>(resultApi.ToString());
+                    GlobalClass.hotelTableModelList = result;
+                }
+                else
+                {
+                    throw new Exception(CommonMessage.HOTEL_TABLE_NO_RECORD_MESSAGE);
+                }
             }
             else
             {
-                throw new Exception(CommonMessage.HOTEL_TABLE_NO_RECORD_MESSAGE);
+                result = GlobalClass.hotelTableModelList;
             }
             return result;
         }
@@ -49,6 +57,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = JsonConvert.DeserializeObject<HotelTableModel>(resultApi.ToString());
+                this.getHotelTables(true);
             }
             else
             {
@@ -65,6 +74,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = JsonConvert.DeserializeObject<HotelTableModel>(resultApi.ToString());
+                this.getHotelTables(true);
             }
             else
             {
@@ -81,6 +91,7 @@ namespace CloudDesktopApp.ApiOperations
             if (CommonClasses.checkResposeResult(resultApi))
             {
                 result = resultApi.ToString();
+                this.getHotelTables(true);
             }
             else
             {

@@ -77,6 +77,18 @@
     <Compile Include="Component\Food\ViewFood.Designer.cs">
       <DependentUpon>ViewFood.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\HotelTabel\BookedHotelTableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\HotelTabel\BookedHotelTableControl.Designer.cs">
+      <DependentUpon>BookedHotelTableControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\HotelTabel\FreeHotelTableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\HotelTabel\FreeHotelTableControl.Designer.cs">
+      <DependentUpon>FreeHotelTableControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\HotelTabel\HotelTabelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,11 +149,23 @@
     <Compile Include="Component\HotelTabel\ViewHotelTable.Designer.cs">
       <DependentUpon>ViewHotelTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\MainTable\HotelTableInvoiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\MainTable\HotelTableInvoiceControl.Designer.cs">
+      <DependentUpon>HotelTableInvoiceControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\MainTable\MainTable.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Component\MainTable\MainTable.Designer.cs">
       <DependentUpon>MainTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\MainTable\TableStatusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\MainTable\TableStatusControl.Designer.cs">
+      <DependentUpon>TableStatusControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Component\Profile\CreateProfile.cs">
       <SubType>Form</SubType>
@@ -208,6 +232,12 @@
     <EmbeddedResource Include="Component\Food\ViewFood.resx">
       <DependentUpon>ViewFood.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Component\HotelTabel\BookedHotelTableControl.resx">
+      <DependentUpon>BookedHotelTableControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\HotelTabel\FreeHotelTableControl.resx">
+      <DependentUpon>FreeHotelTableControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\HotelTabel\HotelTabelForm.resx">
       <DependentUpon>HotelTabelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,8 +268,14 @@
     <EmbeddedResource Include="Component\HotelTabel\ViewHotelTable.resx">
       <DependentUpon>ViewHotelTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Component\MainTable\HotelTableInvoiceControl.resx">
+      <DependentUpon>HotelTableInvoiceControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\MainTable\MainTable.resx">
       <DependentUpon>MainTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\MainTable\TableStatusControl.resx">
+      <DependentUpon>TableStatusControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\Profile\CreateProfile.resx">
       <DependentUpon>CreateProfile.cs</DependentUpon>
@@ -331,7 +367,15 @@
   <ItemGroup>
     <None Include="Resources\delete.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\setProfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookedTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freeTable.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

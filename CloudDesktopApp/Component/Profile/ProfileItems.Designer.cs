@@ -28,13 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DeleteButton = new Bunifu.Framework.UI.BunifuTileButton();
-            this.EditButton = new Bunifu.Framework.UI.BunifuTileButton();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.profileName = new MaterialSkin.Controls.MaterialLabel();
             this.profileType = new MaterialSkin.Controls.MaterialLabel();
             this.setProfile = new Bunifu.Framework.UI.BunifuTileButton();
+            this.DeleteButton = new Bunifu.Framework.UI.BunifuTileButton();
+            this.EditButton = new Bunifu.Framework.UI.BunifuTileButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
+            // 
+            // profileName
+            // 
+            this.profileName.Depth = 0;
+            this.profileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.profileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.profileName.Location = new System.Drawing.Point(3, 81);
+            this.profileName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.profileName.Name = "profileName";
+            this.profileName.Size = new System.Drawing.Size(146, 23);
+            this.profileName.TabIndex = 30;
+            this.profileName.Text = "User ProfileName";
+            this.profileName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // profileType
+            // 
+            this.profileType.Depth = 0;
+            this.profileType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.profileType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.profileType.Location = new System.Drawing.Point(3, 104);
+            this.profileType.MouseState = MaterialSkin.MouseState.HOVER;
+            this.profileType.Name = "profileType";
+            this.profileType.Size = new System.Drawing.Size(146, 17);
+            this.profileType.TabIndex = 31;
+            this.profileType.Text = "Profile Type";
+            this.profileType.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // setProfile
+            // 
+            this.setProfile.BackColor = System.Drawing.Color.Transparent;
+            this.setProfile.color = System.Drawing.Color.Transparent;
+            this.setProfile.colorActive = System.Drawing.Color.Yellow;
+            this.setProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.setProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.setProfile.ForeColor = System.Drawing.Color.Transparent;
+            this.setProfile.Image = global::CloudDesktopApp.Properties.Resources.setProfile;
+            this.setProfile.ImagePosition = 10;
+            this.setProfile.ImageZoom = 35;
+            this.setProfile.LabelPosition = 10;
+            this.setProfile.LabelText = "";
+            this.setProfile.Location = new System.Drawing.Point(96, 127);
+            this.setProfile.Margin = new System.Windows.Forms.Padding(6);
+            this.setProfile.Name = "setProfile";
+            this.setProfile.Size = new System.Drawing.Size(53, 45);
+            this.setProfile.TabIndex = 32;
+            this.setProfile.Click += new System.EventHandler(this.setProfile_Click);
             // 
             // DeleteButton
             // 
@@ -90,52 +136,6 @@
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // profileName
-            // 
-            this.profileName.Depth = 0;
-            this.profileName.Font = new System.Drawing.Font("Roboto", 11F);
-            this.profileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.profileName.Location = new System.Drawing.Point(3, 81);
-            this.profileName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.profileName.Name = "profileName";
-            this.profileName.Size = new System.Drawing.Size(146, 23);
-            this.profileName.TabIndex = 30;
-            this.profileName.Text = "User ProfileName";
-            this.profileName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // profileType
-            // 
-            this.profileType.Depth = 0;
-            this.profileType.Font = new System.Drawing.Font("Roboto", 11F);
-            this.profileType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.profileType.Location = new System.Drawing.Point(3, 104);
-            this.profileType.MouseState = MaterialSkin.MouseState.HOVER;
-            this.profileType.Name = "profileType";
-            this.profileType.Size = new System.Drawing.Size(146, 17);
-            this.profileType.TabIndex = 31;
-            this.profileType.Text = "Profile Type";
-            this.profileType.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // setProfile
-            // 
-            this.setProfile.BackColor = System.Drawing.Color.Transparent;
-            this.setProfile.color = System.Drawing.Color.Transparent;
-            this.setProfile.colorActive = System.Drawing.Color.Yellow;
-            this.setProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.setProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.setProfile.ForeColor = System.Drawing.Color.Transparent;
-            this.setProfile.Image = global::CloudDesktopApp.Properties.Resources.delete;
-            this.setProfile.ImagePosition = 10;
-            this.setProfile.ImageZoom = 35;
-            this.setProfile.LabelPosition = 10;
-            this.setProfile.LabelText = "";
-            this.setProfile.Location = new System.Drawing.Point(96, 127);
-            this.setProfile.Margin = new System.Windows.Forms.Padding(6);
-            this.setProfile.Name = "setProfile";
-            this.setProfile.Size = new System.Drawing.Size(50, 45);
-            this.setProfile.TabIndex = 32;
-            this.setProfile.Click += new System.EventHandler(this.setProfile_Click);
-            // 
             // ProfileItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,7 +153,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ForeColor = System.Drawing.Color.Yellow;
             this.Name = "ProfileItems";
-            this.Size = new System.Drawing.Size(152, 178);
+            this.Size = new System.Drawing.Size(155, 178);
             this.ResumeLayout(false);
 
         }

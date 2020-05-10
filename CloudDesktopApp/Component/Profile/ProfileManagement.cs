@@ -30,7 +30,7 @@ namespace CloudDesktopApp.Component.Profile
         {
             try
             {
-              List<ProfileModel> profiles= new ProfileApiService().loadProfiles();
+              List<ProfileModel> profiles= new ProfileApiService().getProfiles(false);
               if (profiles != null)
               {
                   profilePanel.Controls.Clear();

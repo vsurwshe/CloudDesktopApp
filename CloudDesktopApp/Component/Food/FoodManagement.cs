@@ -23,18 +23,28 @@ namespace CloudDesktopApp.Component.Food
 
         private void FoodManagement_Load(object sender, EventArgs e)
         {
-            this.loadFoods();    
-        }
-
-        public void  loadFoods()
-        {
-            try {
-                foodList = new FoodApiServices().getFoods();
+            this.foodList=this.loadFoods();
+            if (this.foodList != null)
+            {
                 ViewFood foodTable = new ViewFood(foodList);
                 this.foodPanel.Controls.Add(foodTable);
+            }
+            else
+            {
+                this.noFoodMessageLable.Visible = true;
+            }
+            
+        }
+
+        public List<FoodModel> loadFoods()
+        {
+            List<FoodModel> tempFoodModel = null;
+            try {
+                    tempFoodModel = new FoodApiServices().getFoods(false);
             }catch(Exception msg){
                 UserMessage.ShowExceptions(msg.Message);
             }
+            return tempFoodModel;
         }
 
         private void foodCreate_Click(object sender, EventArgs e)
@@ -46,7 +56,5 @@ namespace CloudDesktopApp.Component.Food
             }
             new FoodForm().Show(this);
         }
-
-        
     }
 }

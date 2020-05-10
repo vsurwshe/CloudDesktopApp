@@ -31,6 +31,8 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.customerCreate = new MaterialSkin.Controls.MaterialLabel();
             this.customerTablePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.noCustomerMessageLable = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.customerTablePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -64,11 +66,24 @@
             // 
             // customerTablePanel
             // 
+            this.customerTablePanel.Controls.Add(this.noCustomerMessageLable);
             this.customerTablePanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.customerTablePanel.Location = new System.Drawing.Point(314, 0);
             this.customerTablePanel.Name = "customerTablePanel";
             this.customerTablePanel.Size = new System.Drawing.Size(866, 741);
             this.customerTablePanel.TabIndex = 5;
+            // 
+            // noCustomerMessageLable
+            // 
+            this.noCustomerMessageLable.AutoSize = true;
+            this.noCustomerMessageLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.noCustomerMessageLable.Location = new System.Drawing.Point(3, 0);
+            this.noCustomerMessageLable.Name = "noCustomerMessageLable";
+            this.noCustomerMessageLable.Size = new System.Drawing.Size(542, 31);
+            this.noCustomerMessageLable.TabIndex = 1;
+            this.noCustomerMessageLable.Text = "There is no list of customer in this profile";
+            this.noCustomerMessageLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.noCustomerMessageLable.Visible = false;
             // 
             // CustomerManagment
             // 
@@ -82,6 +97,8 @@
             this.Name = "CustomerManagment";
             this.Text = "CustomerManagment";
             this.Load += new System.EventHandler(this.CustomerManagment_Load);
+            this.customerTablePanel.ResumeLayout(false);
+            this.customerTablePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,5 +109,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel customerCreate;
         private System.Windows.Forms.FlowLayoutPanel customerTablePanel;
+        private Bunifu.Framework.UI.BunifuCustomLabel noCustomerMessageLable;
     }
 }

@@ -14,31 +14,40 @@ using CloudDesktopApp.Helper;
 
 namespace CloudDesktopApp.Component.HotelTabel
 {
-    public partial class Tabel : Form
+    public partial class TabelManagement : Form
     {
         List<HotelTableModel> hotelTableList;
-        public Tabel()
+        public TabelManagement()
         {
             InitializeComponent();
         }
 
         private void Tabel_Load(object sender, EventArgs e)
         {
-            this.loadHotelTable();
-        }
-
-        public void loadHotelTable()
-        {
-            try
+            this.hotelTableList = this.loadHotelTable();
+            if (this.hotelTableList != null)
             {
-                hotelTableList = new HotelTableServicesApi().getHotelTables();
                 ViewHotelTable hotelTable = new ViewHotelTable(hotelTableList);
                 this.hotelTablePanel.Controls.Add(hotelTable);
+            }
+            else {
+                this.noHotelTableMessageLable.Visible = true;
+            }
+            
+        }
+
+        public List<HotelTableModel> loadHotelTable()
+        {
+            List<HotelTableModel> listOfHotelTable = null;
+            try
+            {
+                listOfHotelTable = new HotelTableServicesApi().getHotelTables(false);
             }
             catch (Exception msg)
             {
                 UserMessage.ShowExceptions(msg.Message);
             }
+            return listOfHotelTable;
         }
         private void hotelTableCreate_Click(object sender, EventArgs e)
         {

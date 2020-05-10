@@ -35,6 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customerDetails = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.customerCountLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.customerDetails)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +75,7 @@
             this.customerDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(252)))));
             this.customerDetails.HeaderBgColor = System.Drawing.Color.White;
             this.customerDetails.HeaderForeColor = System.Drawing.Color.Black;
-            this.customerDetails.Location = new System.Drawing.Point(3, 123);
+            this.customerDetails.Location = new System.Drawing.Point(3, 146);
             this.customerDetails.Name = "customerDetails";
             this.customerDetails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -118,7 +120,7 @@
             this.bunifuFlatButton2.IconVisible = false;
             this.bunifuFlatButton2.IconZoom = 90D;
             this.bunifuFlatButton2.IsTab = true;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(3, 82);
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(3, 105);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(252)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(252)))));
@@ -131,17 +133,46 @@
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(166)))), ((int)(((byte)(171)))));
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // customerCountLabel
+            // 
+            this.customerCountLabel.AutoSize = true;
+            this.customerCountLabel.Depth = 0;
+            this.customerCountLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.customerCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.customerCountLabel.Location = new System.Drawing.Point(124, 514);
+            this.customerCountLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.customerCountLabel.Name = "customerCountLabel";
+            this.customerCountLabel.Size = new System.Drawing.Size(17, 19);
+            this.customerCountLabel.TabIndex = 16;
+            this.customerCountLabel.Text = "0";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(3, 514);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(126, 19);
+            this.materialLabel1.TabIndex = 15;
+            this.materialLabel1.Text = "Total Customer : ";
+            // 
             // ViewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.customerCountLabel);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.customerDetails);
             this.Controls.Add(this.bunifuFlatButton2);
             this.Name = "ViewCustomer";
-            this.Size = new System.Drawing.Size(930, 498);
+            this.Size = new System.Drawing.Size(930, 582);
             this.Load += new System.EventHandler(this.ViewCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerDetails)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -149,5 +180,7 @@
 
         private Bunifu.Framework.UI.BunifuCustomDataGrid customerDetails;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private MaterialSkin.Controls.MaterialLabel customerCountLabel;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }
