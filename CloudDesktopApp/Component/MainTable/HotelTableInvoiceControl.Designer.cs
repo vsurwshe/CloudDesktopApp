@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.invoicePanel = new System.Windows.Forms.Panel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.buttonPanle = new System.Windows.Forms.Panel();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.date = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.customerName = new MaterialSkin.Controls.MaterialLabel();
@@ -42,9 +45,6 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.buttonPanle = new System.Windows.Forms.Panel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.invoicePanel.SuspendLayout();
             this.buttonPanle.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +70,42 @@
             this.invoicePanel.Name = "invoicePanel";
             this.invoicePanel.Size = new System.Drawing.Size(586, 563);
             this.invoicePanel.TabIndex = 3;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(3, 149);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(209, 19);
+            this.materialLabel1.TabIndex = 14;
+            this.materialLabel1.Text = "Customer Invoice Order Items";
+            // 
+            // buttonPanle
+            // 
+            this.buttonPanle.Controls.Add(this.materialFlatButton1);
+            this.buttonPanle.Location = new System.Drawing.Point(6, 518);
+            this.buttonPanle.Name = "buttonPanle";
+            this.buttonPanle.Size = new System.Drawing.Size(577, 42);
+            this.buttonPanle.TabIndex = 13;
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Location = new System.Drawing.Point(455, 3);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = true;
+            this.materialFlatButton1.Size = new System.Drawing.Size(102, 36);
+            this.materialFlatButton1.TabIndex = 2;
+            this.materialFlatButton1.Text = "Save Invoice";
+            this.materialFlatButton1.UseVisualStyleBackColor = true;
             // 
             // date
             // 
@@ -227,42 +263,6 @@
             this.lineShape1.X2 = 585;
             this.lineShape1.Y1 = 139;
             this.lineShape1.Y2 = 139;
-            // 
-            // materialFlatButton1
-            // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Location = new System.Drawing.Point(455, 3);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = true;
-            this.materialFlatButton1.Size = new System.Drawing.Size(102, 36);
-            this.materialFlatButton1.TabIndex = 2;
-            this.materialFlatButton1.Text = "Save Invoice";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
-            // 
-            // buttonPanle
-            // 
-            this.buttonPanle.Controls.Add(this.materialFlatButton1);
-            this.buttonPanle.Location = new System.Drawing.Point(6, 518);
-            this.buttonPanle.Name = "buttonPanle";
-            this.buttonPanle.Size = new System.Drawing.Size(577, 42);
-            this.buttonPanle.TabIndex = 13;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(3, 149);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(209, 19);
-            this.materialLabel1.TabIndex = 14;
-            this.materialLabel1.Text = "Customer Invoice Order Items";
             // 
             // HotelTableInvoiceControl
             // 

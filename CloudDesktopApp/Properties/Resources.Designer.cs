@@ -63,6 +63,16 @@ namespace CloudDesktopApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bookedIcon {
+            get {
+                object obj = ResourceManager.GetObject("bookedIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bookedTable {
             get {
                 object obj = ResourceManager.GetObject("bookedTable", resourceCulture);
@@ -113,6 +123,16 @@ namespace CloudDesktopApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap freeIcon {
+            get {
+                object obj = ResourceManager.GetObject("freeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap freeTable {
             get {
                 object obj = ResourceManager.GetObject("freeTable", resourceCulture);
@@ -136,6 +156,16 @@ namespace CloudDesktopApp.Properties {
         internal static System.Drawing.Bitmap icons8_male_user_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-male-user-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap listadd {
+            get {
+                object obj = ResourceManager.GetObject("listadd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +246,16 @@ namespace CloudDesktopApp.Properties {
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap viewEye {
+            get {
+                object obj = ResourceManager.GetObject("viewEye", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

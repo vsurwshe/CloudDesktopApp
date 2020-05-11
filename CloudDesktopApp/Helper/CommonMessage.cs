@@ -68,5 +68,9 @@ namespace CloudDesktopApp.Helper
         public static String HOTEL_TABLE_DELETE_SUCCESS_MESSAGE = "Your hotel table record deleted successfully";
         public static String HOTEL_TABLE_DELETE_UNSUCCESS_MESSAGE = "Your hotel table record not deleted successfully";
 
+        //-------- Table Status Message
+        public static String TABLE_STATUS_NO_BOOKED_TABLES = "There is no any more booked tables in this profile";
+        public static String TABLE_STATUS_NO_FRESS_TABLES = "There is no any more free tables in this profile";
+
     }
 }

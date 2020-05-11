@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //-------------
 using CloudDesktopApp.ApiOperations;
+using CloudDesktopApp.Component.MainTable;
+using CloudDesktopApp.Helper;
 
 namespace CloudDesktopApp.Component.HotelTabel
 {
     public partial class FreeHotelTableControl : UserControl
     {
         HotelTableModel tempHotelTableModel;
+        public event EventHandler loadThePanles;
         public FreeHotelTableControl()
         {
             InitializeComponent();
@@ -24,7 +27,29 @@ namespace CloudDesktopApp.Component.HotelTabel
         {
             InitializeComponent();
             this.tempHotelTableModel = hotelTableDetails;
-            this.tableNumber.Text = hotelTableDetails.hotelTableId.ToString();
+            this.tableNumber.Text = hotelTableDetails.hotelTableName;
+        }
+
+        public FreeHotelTableControl(HotelTableModel hotelTableDetails, FreeHotelTableControl classObject)
+        {
+            InitializeComponent();
+            this.tempHotelTableModel = hotelTableDetails;
+            this.tableNumber.Text = hotelTableDetails.hotelTableName;
+            this.Parent = classObject;
+        }
+
+        public void bookTableButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GlobalClass.hotelTables.AsEnumerable().Where(row => row["hotelTableId"].Equals(tempHotelTableModel.hotelTableId.ToString())).ToList().ForEach(rec => rec.SetField("booked", "true"));
+                if (loadThePanles != null)
+                    loadThePanles(this, EventArgs.Empty);
+            }
+            catch (Exception msg)
+            {
+                UserMessage.ShowExceptions(msg.Message);
+            }
         }
     }
 }

@@ -156,7 +156,7 @@ namespace CloudDesktopApp.Component
             }
         }
 
-        private void dailyTabelTrans_Click(object sender, EventArgs e)
+        public void dailyTabelTrans_Click(object sender, EventArgs e)
         {
             try
             {

@@ -377,6 +377,18 @@
   <ItemGroup>
     <None Include="Resources\freeTable.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookedIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewEye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listadd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\freeIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

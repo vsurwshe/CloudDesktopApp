@@ -42,7 +42,7 @@
             this.hotelTablesPanle.AutoScroll = true;
             this.hotelTablesPanle.AutoSize = true;
             this.hotelTablesPanle.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.hotelTablesPanle.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.hotelTablesPanle.BackColor = System.Drawing.Color.Transparent;
             this.hotelTablesPanle.Dock = System.Windows.Forms.DockStyle.Left;
             this.hotelTablesPanle.Location = new System.Drawing.Point(0, 0);
             this.hotelTablesPanle.Name = "hotelTablesPanle";
@@ -78,12 +78,12 @@
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialLabel4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel4.Location = new System.Drawing.Point(592, 1);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(56, 24);
+            this.materialLabel4.Size = new System.Drawing.Size(42, 19);
             this.materialLabel4.TabIndex = 11;
             this.materialLabel4.Text = "Daily";
             // 
@@ -92,12 +92,12 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialLabel1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(592, 80);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(122, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(97, 19);
             this.materialLabel1.TabIndex = 12;
             this.materialLabel1.Text = "Transcations";
             // 
@@ -106,12 +106,12 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialLabel2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(592, 40);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(58, 24);
+            this.materialLabel2.Size = new System.Drawing.Size(46, 19);
             this.materialLabel2.TabIndex = 13;
             this.materialLabel2.Text = "Table";
             // 
