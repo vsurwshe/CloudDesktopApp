@@ -30,7 +30,6 @@
         {
             this.tableNumber = new MaterialSkin.Controls.MaterialLabel();
             this.addFoodInvoiceItemButton = new Bunifu.Framework.UI.BunifuTileButton();
-            this.viewInvoiceButton = new Bunifu.Framework.UI.BunifuTileButton();
             this.unbookedTableButton = new Bunifu.Framework.UI.BunifuTileButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
@@ -47,6 +46,7 @@
             this.tableNumber.Size = new System.Drawing.Size(17, 19);
             this.tableNumber.TabIndex = 32;
             this.tableNumber.Text = "0";
+            this.tableNumber.Click += new System.EventHandler(this.tableNumber_Click);
             // 
             // addFoodInvoiceItemButton
             // 
@@ -66,26 +66,6 @@
             this.addFoodInvoiceItemButton.Name = "addFoodInvoiceItemButton";
             this.addFoodInvoiceItemButton.Size = new System.Drawing.Size(51, 48);
             this.addFoodInvoiceItemButton.TabIndex = 33;
-            // 
-            // viewInvoiceButton
-            // 
-            this.viewInvoiceButton.BackColor = System.Drawing.Color.Transparent;
-            this.viewInvoiceButton.color = System.Drawing.Color.Transparent;
-            this.viewInvoiceButton.colorActive = System.Drawing.Color.Yellow;
-            this.viewInvoiceButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.viewInvoiceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.viewInvoiceButton.ForeColor = System.Drawing.Color.Transparent;
-            this.viewInvoiceButton.Image = global::CloudDesktopApp.Properties.Resources.viewEye;
-            this.viewInvoiceButton.ImagePosition = 10;
-            this.viewInvoiceButton.ImageZoom = 35;
-            this.viewInvoiceButton.LabelPosition = 10;
-            this.viewInvoiceButton.LabelText = "";
-            this.viewInvoiceButton.Location = new System.Drawing.Point(23, 113);
-            this.viewInvoiceButton.Margin = new System.Windows.Forms.Padding(6);
-            this.viewInvoiceButton.Name = "viewInvoiceButton";
-            this.viewInvoiceButton.Size = new System.Drawing.Size(51, 38);
-            this.viewInvoiceButton.TabIndex = 31;
-            this.viewInvoiceButton.Click += new System.EventHandler(this.viewInvoiceButton_Click);
             // 
             // unbookedTableButton
             // 
@@ -121,6 +101,7 @@
             this.materialLabel1.TabIndex = 1;
             this.materialLabel1.Text = "Booked";
             this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
             // BookedHotelTableControl
             // 
@@ -129,11 +110,10 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.addFoodInvoiceItemButton);
             this.Controls.Add(this.tableNumber);
-            this.Controls.Add(this.viewInvoiceButton);
             this.Controls.Add(this.unbookedTableButton);
             this.Controls.Add(this.materialLabel1);
             this.Name = "BookedHotelTableControl";
-            this.Size = new System.Drawing.Size(93, 149);
+            this.Size = new System.Drawing.Size(93, 110);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,7 +123,6 @@
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private Bunifu.Framework.UI.BunifuTileButton unbookedTableButton;
-        private Bunifu.Framework.UI.BunifuTileButton viewInvoiceButton;
         private MaterialSkin.Controls.MaterialLabel tableNumber;
         private Bunifu.Framework.UI.BunifuTileButton addFoodInvoiceItemButton;
     }

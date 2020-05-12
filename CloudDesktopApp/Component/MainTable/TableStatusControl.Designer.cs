@@ -37,20 +37,22 @@
             this.bookedTablesPanel.AutoScroll = true;
             this.bookedTablesPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.bookedTablesPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.bookedTablesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bookedTablesPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bookedTablesPanel.Location = new System.Drawing.Point(0, 335);
+            this.bookedTablesPanel.Location = new System.Drawing.Point(0, 308);
             this.bookedTablesPanel.Name = "bookedTablesPanel";
-            this.bookedTablesPanel.Size = new System.Drawing.Size(586, 323);
+            this.bookedTablesPanel.Size = new System.Drawing.Size(714, 318);
             this.bookedTablesPanel.TabIndex = 12;
             // 
             // freeTablesPanel
             // 
             this.freeTablesPanel.AutoScroll = true;
             this.freeTablesPanel.BackColor = System.Drawing.Color.Transparent;
+            this.freeTablesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.freeTablesPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.freeTablesPanel.Location = new System.Drawing.Point(0, 0);
             this.freeTablesPanel.Name = "freeTablesPanel";
-            this.freeTablesPanel.Size = new System.Drawing.Size(586, 300);
+            this.freeTablesPanel.Size = new System.Drawing.Size(714, 292);
             this.freeTablesPanel.TabIndex = 11;
             // 
             // TableStatusControl
@@ -60,7 +62,7 @@
             this.Controls.Add(this.bookedTablesPanel);
             this.Controls.Add(this.freeTablesPanel);
             this.Name = "TableStatusControl";
-            this.Size = new System.Drawing.Size(586, 658);
+            this.Size = new System.Drawing.Size(714, 626);
             this.Load += new System.EventHandler(this.TableStatusControl_Load);
             this.ResumeLayout(false);
 

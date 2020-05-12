@@ -65,5 +65,32 @@ namespace CloudDesktopApp.Component.HotelTabel
                 UserMessage.ShowExceptions(msg.Message);
             }
         }
+
+        private void FreeHotelTableControl_Click(object sender, EventArgs e)
+        {
+            this.ShowBookTableForm();
+        }
+
+        public void ShowBookTableForm()
+        {
+            Form formExits = Application.OpenForms["BookTable"];
+            if (formExits != null)
+            {
+                formExits.Close();
+            }
+            BookTable tempBookTable = new BookTable(this.tempHotelTableModel);
+            tempBookTable.bookTable += new EventHandler(bookTheConfiromTable);
+            tempBookTable.Show(this);
+        }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+            this.ShowBookTableForm();
+        }
+
+        private void tableNumber_Click(object sender, EventArgs e)
+        {
+            this.ShowBookTableForm();
+        }
     }
 }

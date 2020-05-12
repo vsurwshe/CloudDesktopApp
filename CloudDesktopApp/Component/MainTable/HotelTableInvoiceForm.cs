@@ -34,12 +34,36 @@ namespace CloudDesktopApp.Component.MainTable
 
         public void setCustomerDetails()
         {
-            if (this.tempLocalInvoiceModel != null)
+            try
             {
-                tabelNumber.Text = tempLocalInvoiceModel.hotelTableId;
-                //tableLocations.Text = tempHotelModel.hotelTableLocations;
-                customerName.Text = tempLocalInvoiceModel.customer;
-                this.invoiceControleSetVisible(true);
+                if (this.tempLocalInvoiceModel != null)
+                {
+                    this.getHotelModel(this.tempLocalInvoiceModel);
+                    tabelNumber.Text = this.tempHotelModel.hotelTableName;
+                    tableLocations.Text = this.tempHotelModel.hotelTableLocations;
+                    customerName.Text = tempLocalInvoiceModel.customer;
+                    invoiceDate.Text = DateTime.Now.ToShortDateString();
+                    this.invoiceControleSetVisible(true);
+                }
+            }
+            catch (Exception msg)
+            {
+                UserMessage.ShowExceptions(msg.Message);
+            }
+            
+        }
+
+        private void getHotelModel(LocalInvoiceModel localInvoiceDeatils)
+        {
+            try
+            {
+                List<DataRow> tempRow = GlobalClass.hotelTables.AsEnumerable().Where(row=> row["hotelTableId"].Equals(localInvoiceDeatils.hotelTableId.ToString())).ToList();
+                if (tempRow.Count >0)
+                this.tempHotelModel =  new HotelTableModel(Convert.ToInt32(tempRow[0].ItemArray[0]), tempRow[0].ItemArray[1].ToString(), tempRow[0].ItemArray[2].ToString(), Convert.ToInt32(tempRow[0].ItemArray[3]), Convert.ToDouble(tempRow[0].ItemArray[4]), Convert.ToBoolean(tempRow[0].ItemArray[5]));
+            }
+            catch (Exception msg)
+            {
+                UserMessage.ShowExceptions(msg.Message);
             }
         }
 

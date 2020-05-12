@@ -65,5 +65,20 @@ namespace CloudDesktopApp.Component.HotelTabel
             }
             return tempLocalInvoiceResult;
         }
+        public void viewInvoice()
+        {
+            if (viewIconClick != null)
+                viewIconClick(this.tempLocalInvoiceModel);
+        }
+
+        public void materialLabel1_Click(object sender, EventArgs e)
+        {
+            this.viewInvoice();
+        }
+
+        public void tableNumber_Click(object sender, EventArgs e)
+        {
+            this.viewInvoice();
+        }
     }
 }

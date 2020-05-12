@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.invoiceDateInforPanle = new System.Windows.Forms.Panel();
-            this.date = new MaterialSkin.Controls.MaterialLabel();
+            this.invoiceDate = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.invoiceItemInfoPanle = new System.Windows.Forms.Panel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -51,7 +51,7 @@
             // 
             // invoiceDateInforPanle
             // 
-            this.invoiceDateInforPanle.Controls.Add(this.date);
+            this.invoiceDateInforPanle.Controls.Add(this.invoiceDate);
             this.invoiceDateInforPanle.Controls.Add(this.materialLabel3);
             this.invoiceDateInforPanle.Location = new System.Drawing.Point(10, 71);
             this.invoiceDateInforPanle.Name = "invoiceDateInforPanle";
@@ -59,18 +59,18 @@
             this.invoiceDateInforPanle.TabIndex = 17;
             this.invoiceDateInforPanle.Visible = false;
             // 
-            // date
+            // invoiceDate
             // 
-            this.date.AutoSize = true;
-            this.date.Depth = 0;
-            this.date.Font = new System.Drawing.Font("Roboto", 11F);
-            this.date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.date.Location = new System.Drawing.Point(495, 0);
-            this.date.MouseState = MaterialSkin.MouseState.HOVER;
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(85, 19);
-            this.date.TabIndex = 12;
-            this.date.Text = "23/06/2020";
+            this.invoiceDate.AutoSize = true;
+            this.invoiceDate.Depth = 0;
+            this.invoiceDate.Font = new System.Drawing.Font("Roboto", 11F);
+            this.invoiceDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.invoiceDate.Location = new System.Drawing.Point(495, 0);
+            this.invoiceDate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.invoiceDate.Name = "invoiceDate";
+            this.invoiceDate.Size = new System.Drawing.Size(85, 19);
+            this.invoiceDate.TabIndex = 12;
+            this.invoiceDate.Text = "23/06/2020";
             // 
             // materialLabel3
             // 
@@ -259,7 +259,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialLabel date;
+        private MaterialSkin.Controls.MaterialLabel invoiceDate;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel customerName;
         private MaterialSkin.Controls.MaterialLabel customerNameInfoLabel;
