@@ -99,10 +99,15 @@ namespace CloudDesktopApp.ApiOperations
     public class LocalInvoiceModel
     {
         public int invoiceId { get; set; }
-        public List<InvoiceItemModel> invoiceItems { get; set; }
-        public HotelTableModel hotelTable { get; set; }
-        public CustomerModel customer { get; set; }
-
+        public String hotelTableId { get; set; }
+        public String customer { get; set; }
+        public LocalInvoiceModel(){}
+        public LocalInvoiceModel(int id, String hotel, String customerName)
+        {
+            this.invoiceId = id;
+            this.hotelTableId = hotel;
+            customer = customerName;
+        }
     }
 
     public class InvoiceItemModel 

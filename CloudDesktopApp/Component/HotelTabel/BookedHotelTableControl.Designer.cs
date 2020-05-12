@@ -85,6 +85,7 @@
             this.viewInvoiceButton.Name = "viewInvoiceButton";
             this.viewInvoiceButton.Size = new System.Drawing.Size(51, 38);
             this.viewInvoiceButton.TabIndex = 31;
+            this.viewInvoiceButton.Click += new System.EventHandler(this.viewInvoiceButton_Click);
             // 
             // unbookedTableButton
             // 

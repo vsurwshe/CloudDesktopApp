@@ -65,6 +65,7 @@ namespace CloudDesktopApp.Component.MainTable
                         HotelTableModel tempHotelTable = new HotelTableModel(Convert.ToInt32(row.ItemArray[0]), row.ItemArray[1].ToString(), row.ItemArray[2].ToString(), Convert.ToInt32(row.ItemArray[3]), Convert.ToDouble(row.ItemArray[0]), Convert.ToBoolean(row.ItemArray[5]));
                         BookedHotelTableControl tempBookedHotelTableControl = new BookedHotelTableControl(tempHotelTable);
                         tempBookedHotelTableControl.loadThePanles += new EventHandler(loadFormChlidUserControl);
+                        tempBookedHotelTableControl.viewIconClick += new BookedHotelTableControl.loadInvoiceDelegate(loadViewIconClick);
                         bookedTablesPanel.Controls.Add(tempBookedHotelTableControl);
                     }
                 }
@@ -87,6 +88,11 @@ namespace CloudDesktopApp.Component.MainTable
                     freeTablesPanel.Controls.Add(this.loadLableWithMessage(CommonMessage.TABLE_STATUS_NO_FRESS_TABLES));
                 }
             }
+        }
+
+        public void loadViewIconClick(LocalInvoiceModel localInvoiceDetails)
+        {
+            new MainTableManagement().viewInvoiceData(localInvoiceDetails);
         }
 
         public List<DataRow> getListOfRowBasedOnBooked(String value)

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 //-------------
 using CloudDesktopApp.ApiOperations;
 using CloudDesktopApp.Component.MainTable;
+using CloudDesktopApp.Component.HotelTabel.Invoice;
 using CloudDesktopApp.Helper;
 
 namespace CloudDesktopApp.Component.HotelTabel
@@ -18,6 +19,7 @@ namespace CloudDesktopApp.Component.HotelTabel
     {
         HotelTableModel tempHotelTableModel;
         public event EventHandler loadThePanles;
+
         public FreeHotelTableControl()
         {
             InitializeComponent();
@@ -39,6 +41,18 @@ namespace CloudDesktopApp.Component.HotelTabel
         }
 
         public void bookTableButton_Click(object sender, EventArgs e)
+        {
+            Form formExits = Application.OpenForms["BookTable"];
+            if (formExits != null)
+            {
+                formExits.Close();
+            }
+            BookTable tempBookTable = new BookTable(this.tempHotelTableModel);
+            tempBookTable.bookTable += new EventHandler(bookTheConfiromTable);
+            tempBookTable.Show(this);
+        }
+
+        public void bookTheConfiromTable(object sender, EventArgs e)
         {
             try
             {

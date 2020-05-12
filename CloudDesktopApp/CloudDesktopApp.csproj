@@ -149,11 +149,17 @@
     <Compile Include="Component\HotelTabel\ViewHotelTable.Designer.cs">
       <DependentUpon>ViewHotelTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\MainTable\HotelTableInvoiceControl.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Component\MainTable\HotelTableInvoiceForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\MainTable\HotelTableInvoiceControl.Designer.cs">
-      <DependentUpon>HotelTableInvoiceControl.cs</DependentUpon>
+    <Compile Include="Component\MainTable\HotelTableInvoiceForm.Designer.cs">
+      <DependentUpon>HotelTableInvoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\HotelTabel\Invoice\BookTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\HotelTabel\Invoice\BookTable.Designer.cs">
+      <DependentUpon>BookTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Component\MainTable\MainTable.cs">
       <SubType>Form</SubType>
@@ -269,8 +275,11 @@
     <EmbeddedResource Include="Component\HotelTabel\ViewHotelTable.resx">
       <DependentUpon>ViewHotelTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\MainTable\HotelTableInvoiceControl.resx">
-      <DependentUpon>HotelTableInvoiceControl.cs</DependentUpon>
+    <EmbeddedResource Include="Component\MainTable\HotelTableInvoiceForm.resx">
+      <DependentUpon>HotelTableInvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\HotelTabel\Invoice\BookTable.resx">
+      <DependentUpon>BookTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\MainTable\MainTable.resx">
       <DependentUpon>MainTable.cs</DependentUpon>

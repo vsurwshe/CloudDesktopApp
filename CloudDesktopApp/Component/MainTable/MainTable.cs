@@ -28,13 +28,23 @@ namespace CloudDesktopApp.Component.MainTable
         {
             this.loadProfileRealtedData();
             hotelTablesPanle.Controls.Add(new TableStatusControl(this.tempHotelTableList));
-            invoicePanel.Controls.Add(new HotelTableInvoiceControl());
+            //invoicePanel.Controls.Add(new HotelTableInvoiceForm());
         }
 
         private void loadProfileRealtedData()
         {
            this.tempHotelTableList = new TabelManagement().loadHotelTable();
            this.tempFoodsList = new FoodManagement().loadFoods();
+        }
+
+        public void viewInvoiceData(LocalInvoiceModel localInvoiceDetails)
+        {
+            Form formExits = Application.OpenForms["HotelTableInvoiceForm"];
+            if (formExits != null)
+            {
+                formExits.Close();
+            }
+            new HotelTableInvoiceForm(localInvoiceDetails).Show();
         }
     }
 }

@@ -16,11 +16,13 @@ namespace CloudDesktopApp
         public static List<FoodModel> foodModelList;
         public static List<HotelTableModel> hotelTableModelList;
         public static List<ProfileModel> profileModelList;
+        
 
         public static DataSet invoiceDataSet = new DataSet();
 
         public static DataTable hotelTables;
         public static DataTable foodTables;
+        public static DataTable localInvoiceModel;
 
         public static void clearProfileData()
         {
