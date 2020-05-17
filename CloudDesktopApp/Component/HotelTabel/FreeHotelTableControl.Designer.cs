@@ -38,13 +38,12 @@
             this.tableNumber.Depth = 0;
             this.tableNumber.Font = new System.Drawing.Font("Roboto", 11F);
             this.tableNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tableNumber.Location = new System.Drawing.Point(3, 60);
+            this.tableNumber.Location = new System.Drawing.Point(2, 10);
             this.tableNumber.MouseState = MaterialSkin.MouseState.HOVER;
             this.tableNumber.Name = "tableNumber";
             this.tableNumber.Size = new System.Drawing.Size(17, 19);
             this.tableNumber.TabIndex = 36;
             this.tableNumber.Text = "0";
-            this.tableNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.tableNumber.Click += new System.EventHandler(this.tableNumber_Click);
             // 
             // materialLabel1
@@ -54,10 +53,10 @@
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Image = global::CloudDesktopApp.Properties.Resources.freeTable;
             this.materialLabel1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.materialLabel1.Location = new System.Drawing.Point(0, 0);
+            this.materialLabel1.Location = new System.Drawing.Point(-1, 19);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(65, 60);
+            this.materialLabel1.Size = new System.Drawing.Size(69, 60);
             this.materialLabel1.TabIndex = 33;
             this.materialLabel1.Text = "Free";
             this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -71,7 +70,7 @@
             this.Controls.Add(this.tableNumber);
             this.Controls.Add(this.materialLabel1);
             this.Name = "FreeHotelTableControl";
-            this.Size = new System.Drawing.Size(67, 85);
+            this.Size = new System.Drawing.Size(67, 79);
             this.Click += new System.EventHandler(this.FreeHotelTableControl_Click);
             this.ResumeLayout(false);
             this.PerformLayout();

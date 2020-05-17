@@ -39,7 +39,7 @@ namespace CloudDesktopApp.Component.HotelTabel.Invoice
                 if (bookTable != null)
                 {
                     this.checkLocalInvoiceModleTable();
-                    GlobalClass.localInvoiceModel.Rows.Add(new object[]{null,this.tempHotelModel.hotelTableId.ToString(),customerName.Text});
+                    GlobalClass.localInvoiceTables.Rows.Add(new object[]{null,this.tempHotelModel.hotelTableId.ToString(),customerName.Text});
                     this.bookTable(sender, e);
                     this.Close();
                 }
@@ -52,15 +52,15 @@ namespace CloudDesktopApp.Component.HotelTabel.Invoice
 
         public void checkLocalInvoiceModleTable()
         {
-            if (GlobalClass.localInvoiceModel == null)
+            if (GlobalClass.localInvoiceTables == null)
             {
                 List<LocalInvoiceModel> tempLocalInvoiceModel = new List<LocalInvoiceModel>();
-                GlobalClass.localInvoiceModel = new ListToDataTableConvetor().ToDataTable<LocalInvoiceModel>(tempLocalInvoiceModel);
-                GlobalClass.localInvoiceModel.Columns["invoiceId"].AutoIncrement = true;
-                GlobalClass.localInvoiceModel.Columns["invoiceId"].AutoIncrementSeed = 1;
-                GlobalClass.localInvoiceModel.Columns["invoiceId"].AutoIncrementStep = 1;
-                GlobalClass.localInvoiceModel.TableName = "LocalInvoice";
-                GlobalClass.invoiceDataSet.Tables.Add(GlobalClass.localInvoiceModel);
+                GlobalClass.localInvoiceTables = new ListToDataTableConvetor().ToDataTable<LocalInvoiceModel>(tempLocalInvoiceModel);
+                GlobalClass.localInvoiceTables.Columns["invoiceId"].AutoIncrement = true;
+                GlobalClass.localInvoiceTables.Columns["invoiceId"].AutoIncrementSeed = 1;
+                GlobalClass.localInvoiceTables.Columns["invoiceId"].AutoIncrementStep = 1;
+                GlobalClass.localInvoiceTables.TableName = "LocalInvoice";
+                GlobalClass.invoiceDataSet.Tables.Add(GlobalClass.localInvoiceTables);
             }
         }
     }

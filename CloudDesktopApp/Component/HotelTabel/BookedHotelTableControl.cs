@@ -31,7 +31,7 @@ namespace CloudDesktopApp.Component.HotelTabel
         {
             InitializeComponent();
             this.tempHotelTableModel = hotelTableDetails;
-            this.tableNumber.Text = hotelTableDetails.hotelTableId.ToString();
+            this.tableNumber.Text = hotelTableDetails.hotelTableName;
             this.tempLocalInvoiceModel = this.getLocalInvoiceModel();
         }
 
@@ -39,6 +39,7 @@ namespace CloudDesktopApp.Component.HotelTabel
         {
             try
             {
+                GlobalClass.localInvoiceTables.AsEnumerable().Where(row => (row["hotelTableId"].Equals(tempHotelTableModel.hotelTableId.ToString()) && row["invoiceId"].Equals(tempLocalInvoiceModel.invoiceId))).ToList().ForEach(rec=> GlobalClass.localInvoiceTables.Rows.Remove(rec));
                 GlobalClass.hotelTables.AsEnumerable().Where(row => row["hotelTableId"].Equals(tempHotelTableModel.hotelTableId.ToString())).ToList().ForEach(rec => rec.SetField("booked", "false"));
                 if (loadThePanles != null)
                     loadThePanles(this, EventArgs.Empty);
@@ -58,9 +59,9 @@ namespace CloudDesktopApp.Component.HotelTabel
         public LocalInvoiceModel getLocalInvoiceModel()
         {
             LocalInvoiceModel tempLocalInvoiceResult = null;
-            if (GlobalClass.localInvoiceModel != null)
+            if (GlobalClass.localInvoiceTables != null)
             {
-               List<DataRow> tempDataRow = GlobalClass.localInvoiceModel.AsEnumerable().Where(row => row["hotelTableId"].Equals(this.tempHotelTableModel.hotelTableId.ToString())).ToList();
+               List<DataRow> tempDataRow = GlobalClass.localInvoiceTables.AsEnumerable().Where(row => row["hotelTableId"].Equals(this.tempHotelTableModel.hotelTableId.ToString())).ToList();
                tempLocalInvoiceResult = new LocalInvoiceModel(Convert.ToInt32(tempDataRow[0].ItemArray[0]), tempDataRow[0].ItemArray[1].ToString(), tempDataRow[0].ItemArray[2].ToString());
             }
             return tempLocalInvoiceResult;

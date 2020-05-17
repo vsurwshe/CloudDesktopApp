@@ -105,7 +105,7 @@
             this.infoProfileTabel.Location = new System.Drawing.Point(1, 340);
             this.infoProfileTabel.Name = "infoProfileTabel";
             this.infoProfileTabel.RowHeadersVisible = false;
-            this.infoProfileTabel.Size = new System.Drawing.Size(358, 152);
+            this.infoProfileTabel.Size = new System.Drawing.Size(313, 152);
             this.infoProfileTabel.TabIndex = 6;
             this.infoProfileTabel.Visible = false;
             // 
@@ -123,7 +123,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.Red;
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(12, 161);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";

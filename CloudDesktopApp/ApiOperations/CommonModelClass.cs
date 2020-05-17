@@ -118,5 +118,17 @@ namespace CloudDesktopApp.ApiOperations
         public int invoiceItemQty { get; set; }
         public Double invoiceTotalPrice { get; set; }
         public LocalInvoiceModel invoice {get; set;}
+
+        public InvoiceItemModel() { }
+        
+        public InvoiceItemModel(int id , String itemName, Double itemPrice, int itemQty, Double itemTotal, LocalInvoiceModel localInvoice)
+        {
+            this.invoiceItemId = id;
+            this.invoiceItemName = itemName;
+            this.invoiceItemPrice = itemPrice;
+            this.invoiceItemQty = itemQty;
+            this.invoiceTotalPrice = itemTotal;
+            this.invoice = localInvoice;
+        }
     }
 }

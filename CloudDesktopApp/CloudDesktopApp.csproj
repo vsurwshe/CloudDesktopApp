@@ -95,6 +95,12 @@
     <Compile Include="Component\HotelTabel\HotelTabelForm.Designer.cs">
       <DependentUpon>HotelTabelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\HotelTabel\Invoice\AddFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\HotelTabel\Invoice\AddFood.Designer.cs">
+      <DependentUpon>AddFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\HotelTabel\TabelManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Component\HotelTabel\HotelTabelForm.resx">
       <DependentUpon>HotelTabelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\HotelTabel\Invoice\AddFood.resx">
+      <DependentUpon>AddFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\HotelTabel\TabelManagement.resx">
       <DependentUpon>TabelManagement.cs</DependentUpon>

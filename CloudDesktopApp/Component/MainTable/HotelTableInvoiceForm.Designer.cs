@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.invoiceDateInforPanle = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.invoiceDate = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.invoiceItemInfoPanle = new System.Windows.Forms.Panel();
+            this.invoiceFoodItemDetails = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.addFoodInvoice = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.invoiceItemPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.invoiceInfoPanel = new System.Windows.Forms.Panel();
             this.customerName = new MaterialSkin.Controls.MaterialLabel();
             this.tableNumberInfoLable = new MaterialSkin.Controls.MaterialLabel();
@@ -43,21 +48,11 @@
             this.customerNameInfoLabel = new MaterialSkin.Controls.MaterialLabel();
             this.invoiceButtonPanle = new System.Windows.Forms.Panel();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.invoiceDateInforPanle.SuspendLayout();
             this.invoiceItemInfoPanle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceFoodItemDetails)).BeginInit();
             this.invoiceInfoPanel.SuspendLayout();
             this.invoiceButtonPanle.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // invoiceDateInforPanle
-            // 
-            this.invoiceDateInforPanle.Controls.Add(this.invoiceDate);
-            this.invoiceDateInforPanle.Controls.Add(this.materialLabel3);
-            this.invoiceDateInforPanle.Location = new System.Drawing.Point(10, 71);
-            this.invoiceDateInforPanle.Name = "invoiceDateInforPanle";
-            this.invoiceDateInforPanle.Size = new System.Drawing.Size(583, 27);
-            this.invoiceDateInforPanle.TabIndex = 17;
-            this.invoiceDateInforPanle.Visible = false;
             // 
             // invoiceDate
             // 
@@ -65,7 +60,7 @@
             this.invoiceDate.Depth = 0;
             this.invoiceDate.Font = new System.Drawing.Font("Roboto", 11F);
             this.invoiceDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.invoiceDate.Location = new System.Drawing.Point(495, 0);
+            this.invoiceDate.Location = new System.Drawing.Point(493, 13);
             this.invoiceDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.invoiceDate.Name = "invoiceDate";
             this.invoiceDate.Size = new System.Drawing.Size(85, 19);
@@ -78,7 +73,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(445, 0);
+            this.materialLabel3.Location = new System.Drawing.Point(443, 13);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(44, 19);
@@ -88,13 +83,92 @@
             // invoiceItemInfoPanle
             // 
             this.invoiceItemInfoPanle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.invoiceItemInfoPanle.Controls.Add(this.invoiceFoodItemDetails);
+            this.invoiceItemInfoPanle.Controls.Add(this.addFoodInvoice);
             this.invoiceItemInfoPanle.Controls.Add(this.materialLabel1);
-            this.invoiceItemInfoPanle.Controls.Add(this.invoiceItemPanel);
-            this.invoiceItemInfoPanle.Location = new System.Drawing.Point(13, 238);
+            this.invoiceItemInfoPanle.Location = new System.Drawing.Point(10, 238);
             this.invoiceItemInfoPanle.Name = "invoiceItemInfoPanle";
             this.invoiceItemInfoPanle.Size = new System.Drawing.Size(583, 297);
             this.invoiceItemInfoPanle.TabIndex = 16;
             this.invoiceItemInfoPanle.Visible = false;
+            // 
+            // invoiceFoodItemDetails
+            // 
+            this.invoiceFoodItemDetails.AllowUserToAddRows = false;
+            this.invoiceFoodItemDetails.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(247)))), ((int)(((byte)(252)))));
+            this.invoiceFoodItemDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.invoiceFoodItemDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.invoiceFoodItemDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.invoiceFoodItemDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(252)))));
+            this.invoiceFoodItemDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.invoiceFoodItemDetails.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.invoiceFoodItemDetails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.invoiceFoodItemDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.invoiceFoodItemDetails.ColumnHeadersHeight = 30;
+            this.invoiceFoodItemDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.invoiceFoodItemDetails.DefaultCellStyle = dataGridViewCellStyle3;
+            this.invoiceFoodItemDetails.DoubleBuffered = true;
+            this.invoiceFoodItemDetails.EnableHeadersVisualStyles = false;
+            this.invoiceFoodItemDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(252)))));
+            this.invoiceFoodItemDetails.HeaderBgColor = System.Drawing.Color.White;
+            this.invoiceFoodItemDetails.HeaderForeColor = System.Drawing.Color.Black;
+            this.invoiceFoodItemDetails.Location = new System.Drawing.Point(6, 35);
+            this.invoiceFoodItemDetails.Name = "invoiceFoodItemDetails";
+            this.invoiceFoodItemDetails.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.invoiceFoodItemDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.invoiceFoodItemDetails.RowHeadersVisible = false;
+            this.invoiceFoodItemDetails.RowHeadersWidth = 120;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(221)))), ((int)(((byte)(255)))));
+            this.invoiceFoodItemDetails.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.invoiceFoodItemDetails.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.invoiceFoodItemDetails.RowTemplate.Height = 30;
+            this.invoiceFoodItemDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.invoiceFoodItemDetails.Size = new System.Drawing.Size(570, 226);
+            this.invoiceFoodItemDetails.TabIndex = 16;
+            this.invoiceFoodItemDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.invoiceFoodItemDetails_CellContentClick);
+            // 
+            // addFoodInvoice
+            // 
+            this.addFoodInvoice.AutoSize = true;
+            this.addFoodInvoice.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addFoodInvoice.BackColor = System.Drawing.Color.Green;
+            this.addFoodInvoice.Depth = 0;
+            this.addFoodInvoice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addFoodInvoice.ForeColor = System.Drawing.Color.White;
+            this.addFoodInvoice.Location = new System.Drawing.Point(488, 2);
+            this.addFoodInvoice.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.addFoodInvoice.MouseState = MaterialSkin.MouseState.HOVER;
+            this.addFoodInvoice.Name = "addFoodInvoice";
+            this.addFoodInvoice.Primary = false;
+            this.addFoodInvoice.Size = new System.Drawing.Size(89, 36);
+            this.addFoodInvoice.TabIndex = 15;
+            this.addFoodInvoice.Text = "+ Add Food";
+            this.addFoodInvoice.UseVisualStyleBackColor = false;
+            this.addFoodInvoice.Click += new System.EventHandler(this.addFoodInvoice_Click);
             // 
             // materialLabel1
             // 
@@ -109,26 +183,20 @@
             this.materialLabel1.TabIndex = 14;
             this.materialLabel1.Text = "Customer Invoice Order Items";
             // 
-            // invoiceItemPanel
-            // 
-            this.invoiceItemPanel.BackColor = System.Drawing.Color.White;
-            this.invoiceItemPanel.Location = new System.Drawing.Point(3, 32);
-            this.invoiceItemPanel.Name = "invoiceItemPanel";
-            this.invoiceItemPanel.Size = new System.Drawing.Size(582, 225);
-            this.invoiceItemPanel.TabIndex = 0;
-            // 
             // invoiceInfoPanel
             // 
             this.invoiceInfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.invoiceInfoPanel.Controls.Add(this.invoiceDate);
+            this.invoiceInfoPanel.Controls.Add(this.materialLabel3);
             this.invoiceInfoPanel.Controls.Add(this.customerName);
             this.invoiceInfoPanel.Controls.Add(this.tableNumberInfoLable);
             this.invoiceInfoPanel.Controls.Add(this.tabelNumber);
             this.invoiceInfoPanel.Controls.Add(this.tabelLocationInfoLabel);
             this.invoiceInfoPanel.Controls.Add(this.tableLocations);
             this.invoiceInfoPanel.Controls.Add(this.customerNameInfoLabel);
-            this.invoiceInfoPanel.Location = new System.Drawing.Point(10, 104);
+            this.invoiceInfoPanel.Location = new System.Drawing.Point(10, 100);
             this.invoiceInfoPanel.Name = "invoiceInfoPanel";
-            this.invoiceInfoPanel.Size = new System.Drawing.Size(586, 128);
+            this.invoiceInfoPanel.Size = new System.Drawing.Size(583, 132);
             this.invoiceInfoPanel.TabIndex = 15;
             this.invoiceInfoPanel.Visible = false;
             // 
@@ -138,7 +206,7 @@
             this.customerName.Depth = 0;
             this.customerName.Font = new System.Drawing.Font("Roboto", 11F);
             this.customerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.customerName.Location = new System.Drawing.Point(138, 82);
+            this.customerName.Location = new System.Drawing.Point(140, 93);
             this.customerName.MouseState = MaterialSkin.MouseState.HOVER;
             this.customerName.Name = "customerName";
             this.customerName.Size = new System.Drawing.Size(116, 19);
@@ -151,7 +219,7 @@
             this.tableNumberInfoLable.Depth = 0;
             this.tableNumberInfoLable.Font = new System.Drawing.Font("Roboto", 11F);
             this.tableNumberInfoLable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tableNumberInfoLable.Location = new System.Drawing.Point(7, 2);
+            this.tableNumberInfoLable.Location = new System.Drawing.Point(3, 13);
             this.tableNumberInfoLable.MouseState = MaterialSkin.MouseState.HOVER;
             this.tableNumberInfoLable.Name = "tableNumberInfoLable";
             this.tableNumberInfoLable.Size = new System.Drawing.Size(111, 19);
@@ -164,7 +232,7 @@
             this.tabelNumber.Depth = 0;
             this.tabelNumber.Font = new System.Drawing.Font("Roboto", 11F);
             this.tabelNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tabelNumber.Location = new System.Drawing.Point(138, 2);
+            this.tabelNumber.Location = new System.Drawing.Point(140, 13);
             this.tabelNumber.MouseState = MaterialSkin.MouseState.HOVER;
             this.tabelNumber.Name = "tabelNumber";
             this.tabelNumber.Size = new System.Drawing.Size(17, 19);
@@ -177,7 +245,7 @@
             this.tabelLocationInfoLabel.Depth = 0;
             this.tabelLocationInfoLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.tabelLocationInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tabelLocationInfoLabel.Location = new System.Drawing.Point(7, 44);
+            this.tabelLocationInfoLabel.Location = new System.Drawing.Point(3, 55);
             this.tabelLocationInfoLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.tabelLocationInfoLabel.Name = "tabelLocationInfoLabel";
             this.tabelLocationInfoLabel.Size = new System.Drawing.Size(125, 19);
@@ -190,7 +258,7 @@
             this.tableLocations.Depth = 0;
             this.tableLocations.Font = new System.Drawing.Font("Roboto", 11F);
             this.tableLocations.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tableLocations.Location = new System.Drawing.Point(138, 44);
+            this.tableLocations.Location = new System.Drawing.Point(140, 55);
             this.tableLocations.MouseState = MaterialSkin.MouseState.HOVER;
             this.tableLocations.Name = "tableLocations";
             this.tableLocations.Size = new System.Drawing.Size(48, 19);
@@ -203,7 +271,7 @@
             this.customerNameInfoLabel.Depth = 0;
             this.customerNameInfoLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.customerNameInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.customerNameInfoLabel.Location = new System.Drawing.Point(7, 82);
+            this.customerNameInfoLabel.Location = new System.Drawing.Point(3, 93);
             this.customerNameInfoLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.customerNameInfoLabel.Name = "customerNameInfoLabel";
             this.customerNameInfoLabel.Size = new System.Drawing.Size(131, 19);
@@ -213,9 +281,9 @@
             // invoiceButtonPanle
             // 
             this.invoiceButtonPanle.Controls.Add(this.materialFlatButton1);
-            this.invoiceButtonPanle.Location = new System.Drawing.Point(13, 574);
+            this.invoiceButtonPanle.Location = new System.Drawing.Point(10, 541);
             this.invoiceButtonPanle.Name = "invoiceButtonPanle";
-            this.invoiceButtonPanle.Size = new System.Drawing.Size(586, 42);
+            this.invoiceButtonPanle.Size = new System.Drawing.Size(586, 52);
             this.invoiceButtonPanle.TabIndex = 13;
             this.invoiceButtonPanle.Visible = false;
             // 
@@ -224,7 +292,7 @@
             this.materialFlatButton1.AutoSize = true;
             this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Location = new System.Drawing.Point(455, 3);
+            this.materialFlatButton1.Location = new System.Drawing.Point(477, 6);
             this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton1.Name = "materialFlatButton1";
@@ -238,17 +306,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 681);
+            this.ClientSize = new System.Drawing.Size(605, 605);
             this.Controls.Add(this.invoiceButtonPanle);
             this.Controls.Add(this.invoiceItemInfoPanle);
-            this.Controls.Add(this.invoiceDateInforPanle);
             this.Controls.Add(this.invoiceInfoPanel);
             this.Name = "HotelTableInvoiceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.invoiceDateInforPanle.ResumeLayout(false);
-            this.invoiceDateInforPanle.PerformLayout();
             this.invoiceItemInfoPanle.ResumeLayout(false);
             this.invoiceItemInfoPanle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceFoodItemDetails)).EndInit();
             this.invoiceInfoPanel.ResumeLayout(false);
             this.invoiceInfoPanel.PerformLayout();
             this.invoiceButtonPanle.ResumeLayout(false);
@@ -267,12 +333,12 @@
         private MaterialSkin.Controls.MaterialLabel tabelLocationInfoLabel;
         private MaterialSkin.Controls.MaterialLabel tabelNumber;
         private MaterialSkin.Controls.MaterialLabel tableNumberInfoLable;
-        private System.Windows.Forms.FlowLayoutPanel invoiceItemPanel;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
         private System.Windows.Forms.Panel invoiceButtonPanle;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Panel invoiceInfoPanel;
-        private System.Windows.Forms.Panel invoiceDateInforPanle;
         private System.Windows.Forms.Panel invoiceItemInfoPanle;
+        private MaterialSkin.Controls.MaterialFlatButton addFoodInvoice;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid invoiceFoodItemDetails;
     }
 }
