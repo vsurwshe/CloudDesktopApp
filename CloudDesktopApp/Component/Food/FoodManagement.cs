@@ -41,6 +41,7 @@ namespace CloudDesktopApp.Component.Food
             List<FoodModel> tempFoodModel = null;
             try {
                     tempFoodModel = new FoodApiServices().getFoods(false);
+                    GlobalClass.foodTables = new ListToDataTableConvetor().ToDataTable<FoodModel>(tempFoodModel);
             }catch(Exception msg){
                 UserMessage.ShowExceptions(msg.Message);
             }

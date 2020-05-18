@@ -1,0 +1,8 @@
+﻿            var foodDetails = from foodTables in GlobalClass.foodTables.AsEnumerable()
+                            where foodTables.Field<int>("foodId") == Convert.ToInt32(foodComboBox.SelectedValue.ToString())
+                            select new
+                            {
+                                foodPrice = foodTables.Field<double>("foodPrice")
+                           };
+
+                var foodPrice = GlobalClass.foodTables.AsEnumerable().Where(row => row["foodId"].Equals(foodComboBox.SelectedValue.ToString())).ElementAt(0);
