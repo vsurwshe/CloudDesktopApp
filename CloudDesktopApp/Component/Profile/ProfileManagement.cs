@@ -17,6 +17,11 @@ namespace CloudDesktopApp.Component.Profile
     public partial class ProfileManagement : Form
     {
         BackgroundWorker loadProfileBackgroundWorker = null;
+        List<ProfileModel> tempProfiles;
+        List<FoodModel> tempFoodModel;
+        List<CustomerModel> tempCustomerModel;
+        List<HotelTableModel> tempHotelTableModel;
+
 
         public ProfileManagement()
         {
@@ -37,6 +42,7 @@ namespace CloudDesktopApp.Component.Profile
         {
             try
             {
+                this.callCommonApi(true);
                 this.loadProfiles();
             }
             catch (Exception msg)
@@ -44,16 +50,34 @@ namespace CloudDesktopApp.Component.Profile
                 UserMessage.ShowExceptions(msg.Message);
             }
         }
-        
+
+        public void callCommonApi(Boolean callProfile)
+        {
+            try
+            {
+                if (callProfile)
+                {
+                    this.tempProfiles = new ProfileApiService().getProfiles(false);
+                }
+                this.tempCustomerModel = new CustomerApiServices().getCustomers(false);
+                this.tempFoodModel = new FoodApiServices().getFoods(false);
+                this.tempHotelTableModel = new HotelTableServicesApi().getHotelTables(false);
+            }
+            catch (Exception msg)
+            {
+                UserMessage.ShowExceptions(msg.Message);
+            }
+        }
+
         public void loadProfiles()
         {
             try
             {
-                List<ProfileModel> profiles = new ProfileApiService().getProfiles(false);
-                if (profiles != null)
+               
+                if (tempProfiles != null)
                 {
                     profilePanel.Controls.Clear();
-                    profiles.ForEach(delegate(ProfileModel profile)
+                    tempProfiles.ForEach(delegate(ProfileModel profile)
                     {
                         ProfileItems setProfile = new ProfileItems(profile);
                         setProfile.loadProfile += new EventHandler(loadReRunProfile);
@@ -70,6 +94,7 @@ namespace CloudDesktopApp.Component.Profile
 
         private void loadReRunProfile(object sender, EventArgs e)
         {
+            this.callCommonApi(false);
             this.loadProfiles();
         }
 
@@ -120,6 +145,9 @@ namespace CloudDesktopApp.Component.Profile
                     {
                         this.profileNameLable.Text = tempRowData.ItemArray[1].ToString();
                         this.profileTypeLable.Text = tempRowData.ItemArray[2].ToString();
+                        this.noOfCustomer.Text = GlobalClass.customerTables != null ? GlobalClass.customerTables.Rows.Count.ToString() : "0";
+                        this.noOfFood.Text = GlobalClass.foodTables != null ?  GlobalClass.foodTables.Rows.Count.ToString() :"0";
+                        this.noOfHotelTables.Text = GlobalClass.hotelTables != null ? GlobalClass.hotelTables.Rows.Count.ToString() :"0";
                     }
                 }
             }

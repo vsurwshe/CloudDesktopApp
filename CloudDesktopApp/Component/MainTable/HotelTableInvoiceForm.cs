@@ -28,6 +28,31 @@ namespace CloudDesktopApp.Component.MainTable
             this.gridViewButtonLoad();
         }
 
+        private void HotelTableInvoiceForm_Load(object sender, EventArgs e)
+        {
+            this.showDetailsLable();
+        }
+
+        public void showDetailsLable()
+        {
+            if (this.tempLocalInvoiceModel != null)
+            {
+                this.invoiceNumberLable.Text = this.tempLocalInvoiceModel.invoiceId.ToString();
+                this.totalAmountLable.Text= this.getTotalInvocieAmount().ToString();
+            }
+        }
+
+        public Double getTotalInvocieAmount()
+        {
+            Double total = 0.0;
+            if (this.tempLocalInvoiceModel != null && GlobalClass.invoiceItemTables!=null)
+            {
+                string whereCondtion = "invoice = " + this.tempLocalInvoiceModel.invoiceId;
+                total = Convert.ToDouble(GlobalClass.invoiceItemTables.AsEnumerable().Where(row => row["invoice"].Equals(this.tempLocalInvoiceModel.invoiceId.ToString())).Sum(row => Convert.ToDecimal(row["invoiceTotalPrice"])));
+            }
+            return total;
+        }
+
         public HotelTableInvoiceForm(LocalInvoiceModel localInvoiceModel)
         {
             InitializeComponent();
@@ -83,6 +108,7 @@ namespace CloudDesktopApp.Component.MainTable
             }
         }
 
+        // this functions used for the showing add food click
         private void addFoodInvoice_Click(object sender, EventArgs e)
         {
             try
@@ -102,6 +128,7 @@ namespace CloudDesktopApp.Component.MainTable
             }
         }
 
+        // this is deleget the function when add food form is sumbit that time this function is called
         public void saveFoodAddForm(InvoiceItemModel invoiceItemDetails)
         {
             try
@@ -116,6 +143,7 @@ namespace CloudDesktopApp.Component.MainTable
                     invoiceItemDetails.invoice.invoiceId
                 });
                 this.loadInvoiceFoodItem();
+                this.showDetailsLable();
             }
             catch (Exception msg)
             {
@@ -123,6 +151,7 @@ namespace CloudDesktopApp.Component.MainTable
             }
         }
         
+        // this function is used for the invoice item table is there or not
         public void checkInvoiceItemTable()
         {
             if(GlobalClass.invoiceItemTables == null){
@@ -136,6 +165,7 @@ namespace CloudDesktopApp.Component.MainTable
             }
         }
 
+        // this function used for the loading realted invoice id food 
         private void loadInvoiceFoodItem()
         {
             if (GlobalClass.invoiceItemTables != null)
@@ -146,6 +176,7 @@ namespace CloudDesktopApp.Component.MainTable
             }
         }
 
+        // this is setting properties of DataGirdView
         private void loadFilterDataIntoDataGirdView(DataView filterInvoiceItemView)
         {
                 this.invoiceFoodItemDetails.DataSource = filterInvoiceItemView;
@@ -160,6 +191,7 @@ namespace CloudDesktopApp.Component.MainTable
                 this.invoiceFoodItemDetails.Columns["invoiceTotalPrice"].HeaderText = "Amount";
         }
 
+        // this function used for the clear items
         public void invoiceFoodItemClear()
         {
             this.invoiceFoodItemDetails.DataSource = null;
@@ -167,6 +199,7 @@ namespace CloudDesktopApp.Component.MainTable
             this.invoiceFoodItemDetails.Refresh();
         }
 
+        // this function is used for the setting button in DatagridView
         private void gridViewButtonLoad()
         {
             DataGridViewButtonColumn editButton = new DataGridViewButtonColumn();
@@ -183,6 +216,7 @@ namespace CloudDesktopApp.Component.MainTable
             this.invoiceFoodItemDetails.Columns.Add(deleteButton);
         }
 
+        // this function is used for the datagirdview button actions
         private void invoiceFoodItemDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
@@ -203,5 +237,7 @@ namespace CloudDesktopApp.Component.MainTable
         {
             MessageBox.Show(type);
         }
+
+
     }
 }

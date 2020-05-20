@@ -30,8 +30,8 @@
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.hotelTablePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.hotelTableCreate = new MaterialSkin.Controls.MaterialLabel();
             this.noHotelTableMessageLable = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.hotelTableCreate = new MaterialSkin.Controls.MaterialLabel();
             this.hotelTablePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(1, 25);
+            this.materialLabel1.Location = new System.Drawing.Point(-3, 25);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(170, 19);
@@ -56,6 +56,18 @@
             this.hotelTablePanel.Name = "hotelTablePanel";
             this.hotelTablePanel.Size = new System.Drawing.Size(866, 741);
             this.hotelTablePanel.TabIndex = 6;
+            // 
+            // noHotelTableMessageLable
+            // 
+            this.noHotelTableMessageLable.AutoSize = true;
+            this.noHotelTableMessageLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.noHotelTableMessageLable.Location = new System.Drawing.Point(3, 0);
+            this.noHotelTableMessageLable.Name = "noHotelTableMessageLable";
+            this.noHotelTableMessageLable.Size = new System.Drawing.Size(567, 31);
+            this.noHotelTableMessageLable.TabIndex = 0;
+            this.noHotelTableMessageLable.Text = "There is no list of hotel table in this profile.";
+            this.noHotelTableMessageLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.noHotelTableMessageLable.Visible = false;
             // 
             // hotelTableCreate
             // 
@@ -73,18 +85,6 @@
             this.hotelTableCreate.Text = "Add Hotel Table";
             this.hotelTableCreate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.hotelTableCreate.Click += new System.EventHandler(this.hotelTableCreate_Click);
-            // 
-            // noHotelTableMessageLable
-            // 
-            this.noHotelTableMessageLable.AutoSize = true;
-            this.noHotelTableMessageLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.noHotelTableMessageLable.Location = new System.Drawing.Point(3, 0);
-            this.noHotelTableMessageLable.Name = "noHotelTableMessageLable";
-            this.noHotelTableMessageLable.Size = new System.Drawing.Size(567, 31);
-            this.noHotelTableMessageLable.TabIndex = 0;
-            this.noHotelTableMessageLable.Text = "There is no list of hotel table in this profile.";
-            this.noHotelTableMessageLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.noHotelTableMessageLable.Visible = false;
             // 
             // TabelManagement
             // 
