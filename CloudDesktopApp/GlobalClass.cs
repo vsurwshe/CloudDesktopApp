@@ -23,6 +23,7 @@ namespace CloudDesktopApp
         public static DataSet invoiceDataSet = new DataSet();
 
         // this is global data table objects
+        public static DataTable profileTables;
         public static DataTable hotelTables;
         public static DataTable foodTables;
         public static DataTable customerTables;

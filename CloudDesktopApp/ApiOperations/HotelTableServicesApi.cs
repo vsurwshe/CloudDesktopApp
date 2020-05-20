@@ -35,8 +35,8 @@ namespace CloudDesktopApp.ApiOperations
                 if (CommonClasses.checkResposeResult(resultApi))
                 {
                     result = JsonConvert.DeserializeObject<List<HotelTableModel>>(resultApi.ToString());
-                    GlobalClass.hotelTables = null;
                     GlobalClass.hotelTableModelList = result;
+                    GlobalClass.hotelTables = new ListToDataTableConvetor().ToDataTable<HotelTableModel>(result);
                 }
                 else
                 {

@@ -169,8 +169,11 @@ namespace CloudDesktopApp.Component.Food
             {
                 this.Invoke(new MethodInvoker(delegate()
                 {
-                    UserDashborad myParent = (UserDashborad)this.Owner;
-                    myParent.Food_Click(sender,e);
+                    if (this.Owner.Equals("UserDashborad"))
+                    {
+                        UserDashborad myParent = (UserDashborad)this.Owner;
+                        myParent.Food_Click(sender, e);
+                    }
                     this.Dispose();
                 }));
             }

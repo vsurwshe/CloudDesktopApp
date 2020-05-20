@@ -16,6 +16,8 @@ namespace CloudDesktopApp.Component.Profile
     public partial class ProfileItems : UserControl
     {
         ProfileModel tempProfile;
+        public event EventHandler loadProfile;
+
         public ProfileItems(ProfileModel profile)
         {
             InitializeComponent();
@@ -48,7 +50,12 @@ namespace CloudDesktopApp.Component.Profile
         {
             Properties.Settings.Default.profileId = tempProfile.profileId.ToString();
             GlobalClass.clearProfileData();
+            if (loadProfile != null)
+            {
+                this.loadProfile(sender, e);
+            }
             MessageBox.Show(tempProfile.profileName+CommonMessage.PROFILE_SELECTED_MESSAGE);
         }
+
     }
 }

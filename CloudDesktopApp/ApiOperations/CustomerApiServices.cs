@@ -36,6 +36,7 @@ namespace CloudDesktopApp.ApiOperations
                 {
                     result = JsonConvert.DeserializeObject<List<CustomerModel>>(resultApi.ToString());
                     GlobalClass.customerModelList = result;
+                    GlobalClass.customerTables= new ListToDataTableConvetor().ToDataTable<CustomerModel>(result);
                 }
                 else
                 {

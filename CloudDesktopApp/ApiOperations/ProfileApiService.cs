@@ -41,6 +41,7 @@ namespace CloudDesktopApp.ApiOperations
                 {
                     result = JsonConvert.DeserializeObject<List<ProfileModel>>(resultApi.ToString());
                     GlobalClass.profileModelList = result;
+                    GlobalClass.profileTables = new ListToDataTableConvetor().ToDataTable<ProfileModel>(result);
                 }
                 else
                 {

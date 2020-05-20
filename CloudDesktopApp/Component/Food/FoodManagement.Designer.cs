@@ -69,9 +69,9 @@
             // 
             this.foodPanel.Controls.Add(this.noFoodMessageLable);
             this.foodPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.foodPanel.Location = new System.Drawing.Point(314, 0);
+            this.foodPanel.Location = new System.Drawing.Point(239, 0);
             this.foodPanel.Name = "foodPanel";
-            this.foodPanel.Size = new System.Drawing.Size(866, 741);
+            this.foodPanel.Size = new System.Drawing.Size(941, 741);
             this.foodPanel.TabIndex = 6;
             // 
             // noFoodMessageLable

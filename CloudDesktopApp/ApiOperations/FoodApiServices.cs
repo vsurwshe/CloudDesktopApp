@@ -37,6 +37,7 @@ namespace CloudDesktopApp.ApiOperations
                 {
                     result = JsonConvert.DeserializeObject<List<FoodModel>>(resultApi.ToString());
                     GlobalClass.foodModelList = result;
+                    GlobalClass.foodTables = new ListToDataTableConvetor().ToDataTable<FoodModel>(result);
                 }
                 else
                 {

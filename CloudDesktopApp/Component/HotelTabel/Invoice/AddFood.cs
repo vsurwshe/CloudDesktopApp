@@ -106,11 +106,15 @@ namespace CloudDesktopApp.Component.HotelTabel.Invoice
 
         public void InvokeFood(object sender, EventArgs e)
         {
-            this.Invoke(new MethodInvoker(delegate()
-            {
-                new UserDashborad().Food_Click(sender, e);
-                this.Dispose();
-            }));
+            
+                //new UserDashborad().Food_Click(sender, e);
+                //this.Close();
+                Form formExits = Application.OpenForms["FoodForm"];
+                if (formExits != null)
+                {
+                    formExits.Close();
+                }
+                new FoodForm().Show(this);
         }
     }
 }
