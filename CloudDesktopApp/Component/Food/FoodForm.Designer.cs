@@ -37,9 +37,9 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(12, 258);
+            this.progressBar.Location = new System.Drawing.Point(8, 211);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(286, 12);
+            this.progressBar.Size = new System.Drawing.Size(282, 6);
             this.progressBar.TabIndex = 18;
             this.progressBar.Visible = false;
             // 
@@ -48,7 +48,7 @@
             this.saveFoodButton.AutoSize = true;
             this.saveFoodButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.saveFoodButton.Depth = 0;
-            this.saveFoodButton.Location = new System.Drawing.Point(75, 213);
+            this.saveFoodButton.Location = new System.Drawing.Point(80, 167);
             this.saveFoodButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.saveFoodButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveFoodButton.Name = "saveFoodButton";
@@ -63,7 +63,7 @@
             // 
             this.foodCategory.Depth = 0;
             this.foodCategory.Hint = "Enter the food category";
-            this.foodCategory.Location = new System.Drawing.Point(16, 181);
+            this.foodCategory.Location = new System.Drawing.Point(10, 136);
             this.foodCategory.MouseState = MaterialSkin.MouseState.HOVER;
             this.foodCategory.Name = "foodCategory";
             this.foodCategory.PasswordChar = '\0';
@@ -78,7 +78,7 @@
             // 
             this.foodPrice.Depth = 0;
             this.foodPrice.Hint = "Enter the food price";
-            this.foodPrice.Location = new System.Drawing.Point(16, 132);
+            this.foodPrice.Location = new System.Drawing.Point(10, 105);
             this.foodPrice.MouseState = MaterialSkin.MouseState.HOVER;
             this.foodPrice.Name = "foodPrice";
             this.foodPrice.PasswordChar = '\0';
@@ -93,7 +93,7 @@
             // 
             this.foodName.Depth = 0;
             this.foodName.Hint = "Enter the food name";
-            this.foodName.Location = new System.Drawing.Point(16, 88);
+            this.foodName.Location = new System.Drawing.Point(10, 74);
             this.foodName.MouseState = MaterialSkin.MouseState.HOVER;
             this.foodName.Name = "foodName";
             this.foodName.PasswordChar = '\0';
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(312, 282);
+            this.ClientSize = new System.Drawing.Size(301, 223);
             this.Controls.Add(this.foodName);
             this.Controls.Add(this.foodPrice);
             this.Controls.Add(this.progressBar);

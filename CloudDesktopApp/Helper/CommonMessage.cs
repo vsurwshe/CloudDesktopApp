@@ -72,5 +72,8 @@ namespace CloudDesktopApp.Helper
         public static String TABLE_STATUS_NO_BOOKED_TABLES = "There is no any more booked tables in this profile";
         public static String TABLE_STATUS_NO_FRESS_TABLES = "There is no any more free tables in this profile";
 
+        //-------- Add Food
+        public static String ADD_FOOD_INVALID_DATA_MESSAGE = "Please enter valid data";
+
     }
 }

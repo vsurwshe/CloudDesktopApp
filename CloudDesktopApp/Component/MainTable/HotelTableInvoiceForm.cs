@@ -17,8 +17,11 @@ namespace CloudDesktopApp.Component.MainTable
 {
     public partial class HotelTableInvoiceForm : MaterialForm
     {
+        //-------- temp declare the model class object
         HotelTableModel tempHotelModel;
         LocalInvoiceModel tempLocalInvoiceModel;
+
+        //-------- temp declare the DataView 
         DataView filterInvoiceItemView;
 
         public HotelTableInvoiceForm()
@@ -26,31 +29,6 @@ namespace CloudDesktopApp.Component.MainTable
             InitializeComponent();
             SkinClass.SetSkiner(this);
             this.gridViewButtonLoad();
-        }
-
-        private void HotelTableInvoiceForm_Load(object sender, EventArgs e)
-        {
-            this.showDetailsLable();
-        }
-
-        public void showDetailsLable()
-        {
-            if (this.tempLocalInvoiceModel != null)
-            {
-                this.invoiceNumberLable.Text = this.tempLocalInvoiceModel.invoiceId.ToString();
-                this.totalAmountLable.Text= this.getTotalInvocieAmount().ToString();
-            }
-        }
-
-        public Double getTotalInvocieAmount()
-        {
-            Double total = 0.0;
-            if (this.tempLocalInvoiceModel != null && GlobalClass.invoiceItemTables!=null)
-            {
-                string whereCondtion = "invoice = " + this.tempLocalInvoiceModel.invoiceId;
-                total = Convert.ToDouble(GlobalClass.invoiceItemTables.AsEnumerable().Where(row => row["invoice"].Equals(this.tempLocalInvoiceModel.invoiceId.ToString())).Sum(row => Convert.ToDecimal(row["invoiceTotalPrice"])));
-            }
-            return total;
         }
 
         public HotelTableInvoiceForm(LocalInvoiceModel localInvoiceModel)
@@ -62,6 +40,12 @@ namespace CloudDesktopApp.Component.MainTable
             this.gridViewButtonLoad();
         }
 
+        private void HotelTableInvoiceForm_Load(object sender, EventArgs e)
+        {
+            this.showDetailsLable();
+        }
+
+        // this function used for the seting customer details in customer panel
         public void setCustomerDetails()
         {
             try
@@ -81,9 +65,30 @@ namespace CloudDesktopApp.Component.MainTable
             {
                 UserMessage.ShowExceptions(msg.Message);
             }
-            
         }
 
+        // this function used for the show the lable values  
+        public void showDetailsLable()
+        {
+            if (this.tempLocalInvoiceModel != null)
+            {
+                this.invoiceNumberLable.Text = this.tempLocalInvoiceModel.invoiceId.ToString();
+                this.totalAmountLable.Text= this.getTotalInvocieAmount().ToString();
+            }
+        }
+
+        // this function used for get the total amount of invoice items 
+        public Double getTotalInvocieAmount()
+        {
+            Double total = 0.0;
+            if (this.tempLocalInvoiceModel != null && GlobalClass.invoiceItemTables!=null)
+            {
+                total = Convert.ToDouble(GlobalClass.invoiceItemTables.AsEnumerable().Where(row => row["invoice"].Equals(this.tempLocalInvoiceModel.invoiceId.ToString())).Sum(row => Convert.ToDecimal(row["invoiceTotalPrice"])));
+            }
+            return total;
+        }
+
+        // this function used for the return HotelModel
         private void getHotelModel(LocalInvoiceModel localInvoiceDeatils)
         {
             try
@@ -98,6 +103,7 @@ namespace CloudDesktopApp.Component.MainTable
             }
         }
 
+        // this function is used for the setting visiable value of control 
         private void invoiceControleSetVisible(bool value)
         {
             if (this.tempLocalInvoiceModel != null)
@@ -111,8 +117,6 @@ namespace CloudDesktopApp.Component.MainTable
         // this functions used for the showing add food click
         private void addFoodInvoice_Click(object sender, EventArgs e)
         {
-            try
-            {
                 Form formExits = Application.OpenForms["AddFood"];
                 if (formExits != null)
                 {
@@ -120,12 +124,15 @@ namespace CloudDesktopApp.Component.MainTable
                 }
                 AddFood tempAddFood = new AddFood(this.tempHotelModel, this.tempLocalInvoiceModel);
                 tempAddFood.saveFood += new AddFood.SavingFood(saveFoodAddForm);
+                tempAddFood.loadFoodItems += new EventHandler(loadAgainFoodItemsTables);
                 tempAddFood.Show();
-            }
-            catch (Exception msg)
-            {
-                UserMessage.ShowExceptions(msg.Message);
-            }
+        }
+
+        // this function used for the load the food item details 
+        private void loadAgainFoodItemsTables(object sender, EventArgs e)
+        {
+            this.loadInvoiceFoodItem();
+            this.showDetailsLable();
         }
 
         // this is deleget the function when add food form is sumbit that time this function is called
@@ -142,8 +149,6 @@ namespace CloudDesktopApp.Component.MainTable
                     invoiceItemDetails.invoiceTotalPrice,
                     invoiceItemDetails.invoice.invoiceId
                 });
-                this.loadInvoiceFoodItem();
-                this.showDetailsLable();
             }
             catch (Exception msg)
             {
@@ -237,7 +242,5 @@ namespace CloudDesktopApp.Component.MainTable
         {
             MessageBox.Show(type);
         }
-
-
     }
 }

@@ -40,7 +40,7 @@
             // 
             this.customerName.Depth = 0;
             this.customerName.Hint = "Enter the customer name";
-            this.customerName.Location = new System.Drawing.Point(11, 77);
+            this.customerName.Location = new System.Drawing.Point(11, 72);
             this.customerName.MouseState = MaterialSkin.MouseState.HOVER;
             this.customerName.Name = "customerName";
             this.customerName.PasswordChar = '\0';
@@ -55,7 +55,7 @@
             // 
             this.customerMobileNo.Depth = 0;
             this.customerMobileNo.Hint = "Enter the customer mobile number";
-            this.customerMobileNo.Location = new System.Drawing.Point(11, 121);
+            this.customerMobileNo.Location = new System.Drawing.Point(11, 103);
             this.customerMobileNo.MouseState = MaterialSkin.MouseState.HOVER;
             this.customerMobileNo.Name = "customerMobileNo";
             this.customerMobileNo.PasswordChar = '\0';
@@ -68,9 +68,9 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(6, 298);
+            this.progressBar.Location = new System.Drawing.Point(11, 240);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(286, 12);
+            this.progressBar.Size = new System.Drawing.Size(282, 6);
             this.progressBar.TabIndex = 28;
             this.progressBar.Visible = false;
             // 
@@ -79,7 +79,7 @@
             this.saveCustomerButton.AutoSize = true;
             this.saveCustomerButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.saveCustomerButton.Depth = 0;
-            this.saveCustomerButton.Location = new System.Drawing.Point(57, 253);
+            this.saveCustomerButton.Location = new System.Drawing.Point(63, 196);
             this.saveCustomerButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.saveCustomerButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveCustomerButton.Name = "saveCustomerButton";
@@ -94,7 +94,7 @@
             // 
             this.customerEmail.Depth = 0;
             this.customerEmail.Hint = "Enter the customer email id";
-            this.customerEmail.Location = new System.Drawing.Point(11, 163);
+            this.customerEmail.Location = new System.Drawing.Point(11, 134);
             this.customerEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.customerEmail.Name = "customerEmail";
             this.customerEmail.PasswordChar = '\0';
@@ -109,7 +109,7 @@
             // 
             this.customerAddress.Depth = 0;
             this.customerAddress.Hint = "Enter the customer address";
-            this.customerAddress.Location = new System.Drawing.Point(11, 208);
+            this.customerAddress.Location = new System.Drawing.Point(11, 165);
             this.customerAddress.MouseState = MaterialSkin.MouseState.HOVER;
             this.customerAddress.Name = "customerAddress";
             this.customerAddress.PasswordChar = '\0';
@@ -124,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 322);
+            this.ClientSize = new System.Drawing.Size(305, 260);
             this.Controls.Add(this.customerAddress);
             this.Controls.Add(this.customerName);
             this.Controls.Add(this.customerMobileNo);

@@ -39,7 +39,7 @@
             // 
             this.hotelTabelName.Depth = 0;
             this.hotelTabelName.Hint = "Enter the tabel name";
-            this.hotelTabelName.Location = new System.Drawing.Point(12, 69);
+            this.hotelTabelName.Location = new System.Drawing.Point(7, 69);
             this.hotelTabelName.MouseState = MaterialSkin.MouseState.HOVER;
             this.hotelTabelName.Name = "hotelTabelName";
             this.hotelTabelName.PasswordChar = '\0';
@@ -54,7 +54,7 @@
             // 
             this.hotelTableLocations.Depth = 0;
             this.hotelTableLocations.Hint = "Enter the hotel table locations";
-            this.hotelTableLocations.Location = new System.Drawing.Point(12, 98);
+            this.hotelTableLocations.Location = new System.Drawing.Point(7, 99);
             this.hotelTableLocations.MouseState = MaterialSkin.MouseState.HOVER;
             this.hotelTableLocations.Name = "hotelTableLocations";
             this.hotelTableLocations.PasswordChar = '\0';
@@ -67,9 +67,9 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(10, 204);
+            this.progressBar.Location = new System.Drawing.Point(5, 202);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(286, 12);
+            this.progressBar.Size = new System.Drawing.Size(282, 8);
             this.progressBar.TabIndex = 23;
             this.progressBar.Visible = false;
             // 
@@ -78,7 +78,7 @@
             this.saveHotelTableButton.AutoSize = true;
             this.saveHotelTableButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.saveHotelTableButton.Depth = 0;
-            this.saveHotelTableButton.Location = new System.Drawing.Point(79, 159);
+            this.saveHotelTableButton.Location = new System.Drawing.Point(74, 159);
             this.saveHotelTableButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.saveHotelTableButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.saveHotelTableButton.Name = "saveHotelTableButton";
@@ -93,7 +93,7 @@
             // 
             this.hotelTabelSize.Depth = 0;
             this.hotelTabelSize.Hint = "Enter the tabel customer size";
-            this.hotelTabelSize.Location = new System.Drawing.Point(12, 127);
+            this.hotelTabelSize.Location = new System.Drawing.Point(7, 129);
             this.hotelTabelSize.MouseState = MaterialSkin.MouseState.HOVER;
             this.hotelTabelSize.Name = "hotelTabelSize";
             this.hotelTabelSize.PasswordChar = '\0';
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 228);
+            this.ClientSize = new System.Drawing.Size(296, 215);
             this.Controls.Add(this.hotelTabelName);
             this.Controls.Add(this.hotelTableLocations);
             this.Controls.Add(this.progressBar);

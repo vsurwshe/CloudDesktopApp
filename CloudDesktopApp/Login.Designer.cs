@@ -54,7 +54,7 @@
             this.username.SelectionStart = 0;
             this.username.Size = new System.Drawing.Size(247, 23);
             this.username.TabIndex = 0;
-            this.username.Text = "v@v.com";
+            this.username.Text = "m@m.com";
             this.username.UseSystemPasswordChar = false;
             // 
             // loginButton
